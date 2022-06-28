@@ -1,0 +1,206 @@
+.Container {
+  width: 100%;
+  height: 100vh;
+  padding: 0 60px;
+  padding-top: 30px;
+  background: linear-gradient(107.56deg, #FAFAFA 0%, #EBF5F7 49.48%, #F2F2F2 100%);
+}
+.Container .Background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  pointer-events: none;
+  overflow: hidden;
+}
+.Container .Background .BackgroundImage {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+.Container .Header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+.Container .Header .HeaderContentLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Container .Header .HeaderContentLeft .Logo {
+  transform: scale(0.75);
+}
+.Container .Header .HeaderContentLeft .NavigationLinks {
+  margin-left: 50px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.Container .Header .HeaderContentLeft .NavigationLinks a {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(13, 19, 33, 0.25);
+  text-decoration: none;
+}
+.Container .Header .HeaderContentLeft .NavigationLinks a:hover {
+  color: #26C485;
+  cursor: pointer;
+}
+.Container .Header .HeaderContentLeft .NavigationLinks a:active {
+  color: rgba(38, 196, 133, 0.75);
+}
+.Container .Header .HeaderContentLeft .NavigationLinks a:not(:last-child) {
+  margin-right: 35px;
+}
+.Container .Header .HeaderContentRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+}
+.Container .Header .HeaderContentRight .HeaderButtonSecondary {
+  color: #26c485;
+  margin-right: 35px;
+}
+.Container .Header .HeaderContentRight .HeaderButtonSecondary:hover {
+  color: rgba(38, 196, 133, 0.75);
+  cursor: pointer;
+}
+.Container .Header .HeaderContentRight .HeaderButtonSecondary:active {
+  color: #26c485;
+}
+.Container .Header .HeaderContentRight .HeaderButtonPrimary {
+  color: #fff;
+  background-color: #26C485;
+  padding: 7px 14px;
+  border-radius: 5px;
+  box-shadow: 0px 20px 50px rgba(38, 196, 133, 0.25);
+}
+.Container .Header .HeaderContentRight .HeaderButtonPrimary:hover {
+  background-color: rgba(38, 196, 133, 0.75);
+  cursor: pointer;
+}
+.Container .Header .HeaderContentRight .HeaderButtonPrimary:active {
+  background-color: #26c485;
+}
+.Container .MobileHeader {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+.Container .MobileHeader .Logo {
+  transform: scale(0.75);
+}
+.Container .MobileHeader .Menu {
+  width: 100px;
+  height: 30px;
+  background-color: #26C485;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 50px 0px 0px 50px;
+  position: relative;
+  overflow: hidden;
+}
+.Container .MobileHeader .Menu .HamburgerMenu {
+  position: relative;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 7.5px;
+  cursor: pointer;
+  transform: scale(0.8);
+}
+.Container .MobileHeader .Menu .HamburgerMenu span {
+  width: 70%;
+  height: 3px;
+  background-color: #F2F2F2;
+  display: block;
+  position: relative;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+.Container .MobileHeader .Menu .HamburgerMenu span:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -300%);
+  transform-origin: left top;
+}
+.Container .MobileHeader .Menu .HamburgerMenu span:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: left top;
+}
+.Container .MobileHeader .Menu .HamburgerMenu span:nth-child(3) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 200%);
+  transform-origin: left top;
+}
+.Container .MobileHeader .Menu .Open {
+  position: relative;
+}
+.Container .MobileHeader .Menu .Open span {
+  width: 30px;
+  height: 3px;
+  background-color: #F2F2F2;
+  display: block;
+  position: relative;
+  border-radius: 50px;
+}
+.Container .MobileHeader .Menu .Open span:nth-child(1) {
+  width: 20px;
+  height: 2.5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(45deg) translate(-50%, -50%);
+  transform-origin: left top;
+}
+.Container .MobileHeader .Menu .Open span:nth-child(2) {
+  width: 100%;
+  height: 3px;
+  transform: translateX(100%);
+  opacity: 0;
+}
+.Container .MobileHeader .Menu .Open span:nth-child(3) {
+  width: 20px;
+  height: 2.5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(-45deg) translate(-50%, -50%);
+  transform-origin: left top;
+}
+
+@media screen and (max-width: 1000px) {
+  .Container {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

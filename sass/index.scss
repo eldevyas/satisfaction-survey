@@ -1,0 +1,33 @@
+@import './global/variables';
+@import './global/mixins';
+.Container {
+    width: 100%;
+    height: 100vh;
+    padding: 0 60px;
+    padding-top: 30px;
+    background: linear-gradient(107.56deg, #FAFAFA 0%, #EBF5F7 49.48%, #F2F2F2 100%);
+    .Background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        pointer-events: none;
+        overflow: hidden;
+        .BackgroundImage {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+        }
+    }
+    @import './components/Header/DesktopHeader';
+    @import './components/Header/MobileHeader';
+}
+
+@media screen and (max-width: 1000px) {
+    .Container {
+        width: 100%;
+        padding: 0;
+    }
+}

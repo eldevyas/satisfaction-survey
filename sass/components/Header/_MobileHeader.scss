@@ -1,0 +1,101 @@
+@import './../../global/variables';
+.MobileHeader {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    .Logo {
+        transform: scale(0.75);
+    }
+    .Menu {
+        width: 100px;
+        height: 30px;
+        background-color: $C2;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 50px 0px 0px 50px;
+        position: relative;
+        overflow: hidden;
+        .HamburgerMenu {
+            position: relative;
+            margin-left: 5px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 7.5px;
+            cursor: pointer;
+            transform: scale(0.8);
+            span {
+                width: 70%;
+                height: 3px;
+                background-color: $C4;
+                display: block;
+                position: relative;
+                border-radius: 50px;
+                transition: all 0.3s ease-in-out;
+            }
+            span:nth-child(1) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -300%);
+                transform-origin: left top;
+            }
+            span:nth-child(2) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transform-origin: left top;
+            }
+            span:nth-child(3) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, 200%);
+                transform-origin: left top;
+            }
+        }
+        .Open {
+            position: relative;
+            span {
+                width: 30px;
+                height: 3px;
+                background-color: $C4;
+                display: block;
+                position: relative;
+                border-radius: 50px;
+            }
+            span:nth-child(1) {
+                width: 20px;
+                height: 2.5px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: rotate(45deg) translate(-50%, -50%);
+                transform-origin: left top;
+            }
+            span:nth-child(2) {
+                width: 100%;
+                height: 3px;
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            span:nth-child(3) {
+                width: 20px;
+                height: 2.5px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: rotate(-45deg) translate(-50%, -50%);
+                transform-origin: left top;
+            }
+        }
+    }
+}
