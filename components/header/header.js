@@ -1,5 +1,6 @@
 import React from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
+import Button from '@mui/material/Button';
 
 
 class ResponsiveHeader extends React.Component {
@@ -33,6 +34,10 @@ class ResponsiveHeader extends React.Component {
 
             // Toggle the class of the button
             Btn.classList.toggle("Open");
+
+            // Close the menu
+            let Menu = document.getElementById("Menu");
+            Menu.classList.toggle("OpenMenu");
         }
   
       return (
@@ -45,23 +50,51 @@ class ResponsiveHeader extends React.Component {
     
                 <div className="NavigationLinks">
                     <div>
-                    <a>Accueil</a>
-                    <a>Emplois</a>
-                    <a>Contact</a>
-                    <a>à propos</a>
+                    <Button
+                    variant="text"
+                    className="LinkButton"
+                    >
+                        Accueil
+                    </Button>
+
+                    <Button
+                    variant="text"
+                    className="LinkButton"
+                    >
+                        Emplois
+                    </Button>
+
+                    <Button
+                    variant="text"
+                    className="LinkButton"
+                    >
+                        Contact
+                    </Button>
+
+                    <Button
+                    variant="text"
+                    className="LinkButton"
+                    >
+                        à propos
+                    </Button>
                     </div>
                 </div>
     
                 </div>
     
                 <div className="HeaderContentRight">
-                <div className="HeaderButtonSecondary">
-                    Sondage
-                </div>
-    
-                <div className="HeaderButtonPrimary">
-                    Administration
-                </div>
+                    <Button 
+                    variant="text"
+                    className="TextButton"
+                    >
+                        Sondage
+                    </Button>
+                    <Button 
+                    variant="primary"
+                    className="PrimaryButton"
+                    >
+                        Administration
+                    </Button>
                 </div>
             </div>
           ) : (
@@ -70,11 +103,59 @@ class ResponsiveHeader extends React.Component {
                     <Image className="Logo" src={"/../public/logo.png"} alt="logo" width={110} height={50}/>
                 </div>
 
-                <div className="Menu">
+                <div className="MenuIcon">
                     <div className="HamburgerMenu OpenMenu" id='MenuBtn' onClick={handleMenuButtonClick}>
                         <span></span>
                         <span></span>
                         <span></span>
+                    </div>
+                </div>
+
+                <div className="Menu" id='Menu'>
+                    <div className="MenuContent">
+                        <Button
+                        variant="text"
+                        className="LinkButton"
+                        >
+                            Accueil
+                        </Button>
+
+                        <Button
+                        variant="text"
+                        className="LinkButton"
+                        >
+                            Emplois
+                        </Button>
+
+                        <Button
+                        variant="text"
+                        className="LinkButton"
+                        >
+                            Contact
+                        </Button>
+
+                        <Button
+                        variant="text"
+                        className="LinkButton"
+                        >
+                            à propos
+                        </Button>
+
+
+
+                        <Button
+                        variant="text"
+                        className="TextButton"
+                        >
+                            Sondage
+                        </Button>
+
+                        <Button
+                        variant="primary"
+                        className="PrimaryButton"
+                        >
+                            Administration
+                        </Button>
                     </div>
                 </div>
             </div>

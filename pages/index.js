@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Header from './../components/header/header'
-
+import Content from './../components/home/home'
 
 export default function Home() {
   return (
@@ -13,7 +12,8 @@ export default function Home() {
         <div className="Background">
             <Image className="BackgroundImage" src={"/../public/image/background.png"} alt="background" width={1920} height={1080}/>
         </div>
-        <Header/>
+        
+        <Content />
     </div>
   )
 }

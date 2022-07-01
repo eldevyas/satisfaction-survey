@@ -1,3 +1,15 @@
 @mixin BodyBackground() {
     background: linear-gradient(107.56deg, #FAFAFA 0%, #EBF5F7 49.48%, #F2F2F2 100%);
 }
+
+@mixin GradientBorder($color) {
+    border: double 4px transparent;
+    border-radius: 25px;
+    background-image: linear-gradient($color, $color), radial-gradient(circle at bottom left, rgba($C2, 0.25), rgba($C4, 0.1), rgba($C3, 0.25));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+@mixin WidgetShadow($color) {
+    box-shadow: 0px 0px 100px rgba($color, 0.5);
+}

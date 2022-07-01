@@ -1,0 +1,12 @@
+@import './../../global/variables';
+@import './../../global/mixins';
+.Home {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 60px;
+    padding-top: 30px;
+    padding-bottom: 250px;
+    @import './imports/landingPage';
+    @import './imports/widget';
+}

@@ -1,9 +1,8 @@
 .Container {
   width: 100%;
-  height: 100vh;
-  padding: 0 60px;
-  padding-top: 30px;
+  height: 100%;
   background: linear-gradient(107.56deg, #FAFAFA 0%, #EBF5F7 49.48%, #F2F2F2 100%);
+  overflow: hidden;
 }
 .Container .Background {
   width: 100%;
@@ -13,7 +12,6 @@
   left: 0;
   cursor: pointer;
   pointer-events: none;
-  overflow: hidden;
 }
 .Container .Background .BackgroundImage {
   position: absolute;
@@ -28,6 +26,8 @@
   justify-content: space-between;
   align-items: center;
   user-select: none;
+  padding: 0px 60px;
+  padding-top: 40px;
 }
 .Container .Header .HeaderContentLeft {
   display: flex;
@@ -45,22 +45,19 @@
   justify-content: flex-end;
   align-items: center;
 }
-.Container .Header .HeaderContentLeft .NavigationLinks a {
-  font-size: 14px;
-  font-weight: bold;
-  text-transform: uppercase;
+.Container .Header .HeaderContentLeft .NavigationLinks .LinkButton {
+  font-family: Poppins, sans-serif;
   color: rgba(13, 19, 33, 0.25);
-  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 7px 14px;
 }
-.Container .Header .HeaderContentLeft .NavigationLinks a:hover {
+.Container .Header .HeaderContentLeft .NavigationLinks .LinkButton:hover {
   color: #26C485;
   cursor: pointer;
 }
-.Container .Header .HeaderContentLeft .NavigationLinks a:active {
-  color: rgba(38, 196, 133, 0.75);
-}
-.Container .Header .HeaderContentLeft .NavigationLinks a:not(:last-child) {
-  margin-right: 35px;
+.Container .Header .HeaderContentLeft .NavigationLinks .LinkButton:not(:last-child) {
+  margin-right: 20px;
 }
 .Container .Header .HeaderContentRight {
   display: flex;
@@ -70,30 +67,22 @@
   font-weight: bold;
   font-size: 14px;
 }
-.Container .Header .HeaderContentRight .HeaderButtonSecondary {
+.Container .Header .HeaderContentRight .TextButton {
   color: #26c485;
-  margin-right: 35px;
-}
-.Container .Header .HeaderContentRight .HeaderButtonSecondary:hover {
-  color: rgba(38, 196, 133, 0.75);
-  cursor: pointer;
-}
-.Container .Header .HeaderContentRight .HeaderButtonSecondary:active {
-  color: #26c485;
-}
-.Container .Header .HeaderContentRight .HeaderButtonPrimary {
-  color: #fff;
-  background-color: #26C485;
+  margin-right: 15px;
+  font-weight: bold;
+  font-size: 14px;
   padding: 7px 14px;
-  border-radius: 5px;
-  box-shadow: 0px 20px 50px rgba(38, 196, 133, 0.25);
+  font-family: Poppins, sans-serif;
 }
-.Container .Header .HeaderContentRight .HeaderButtonPrimary:hover {
-  background-color: rgba(38, 196, 133, 0.75);
-  cursor: pointer;
-}
-.Container .Header .HeaderContentRight .HeaderButtonPrimary:active {
+.Container .Header .HeaderContentRight .PrimaryButton {
   background-color: #26c485;
+  color: rgba(242, 242, 242, 0.8);
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0px 20px 50px rgba(38, 196, 133, 0.25);
+  padding: 7px 14px;
+  font-family: Poppins, sans-serif;
 }
 .Container .MobileHeader {
   width: 100%;
@@ -106,7 +95,7 @@
 .Container .MobileHeader .Logo {
   transform: scale(0.75);
 }
-.Container .MobileHeader .Menu {
+.Container .MobileHeader .MenuIcon {
   width: 100px;
   height: 30px;
   background-color: #26C485;
@@ -117,7 +106,7 @@
   position: relative;
   overflow: hidden;
 }
-.Container .MobileHeader .Menu .HamburgerMenu {
+.Container .MobileHeader .MenuIcon .HamburgerMenu {
   position: relative;
   margin-left: 5px;
   width: 30px;
@@ -130,7 +119,7 @@
   cursor: pointer;
   transform: scale(0.8);
 }
-.Container .MobileHeader .Menu .HamburgerMenu span {
+.Container .MobileHeader .MenuIcon .HamburgerMenu span {
   width: 70%;
   height: 3px;
   background-color: #F2F2F2;
@@ -139,31 +128,31 @@
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
 }
-.Container .MobileHeader .Menu .HamburgerMenu span:nth-child(1) {
+.Container .MobileHeader .MenuIcon .HamburgerMenu span:nth-child(1) {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -300%);
   transform-origin: left top;
 }
-.Container .MobileHeader .Menu .HamburgerMenu span:nth-child(2) {
+.Container .MobileHeader .MenuIcon .HamburgerMenu span:nth-child(2) {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   transform-origin: left top;
 }
-.Container .MobileHeader .Menu .HamburgerMenu span:nth-child(3) {
+.Container .MobileHeader .MenuIcon .HamburgerMenu span:nth-child(3) {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, 200%);
   transform-origin: left top;
 }
-.Container .MobileHeader .Menu .Open {
+.Container .MobileHeader .MenuIcon .Open {
   position: relative;
 }
-.Container .MobileHeader .Menu .Open span {
+.Container .MobileHeader .MenuIcon .Open span {
   width: 30px;
   height: 3px;
   background-color: #F2F2F2;
@@ -171,7 +160,7 @@
   position: relative;
   border-radius: 50px;
 }
-.Container .MobileHeader .Menu .Open span:nth-child(1) {
+.Container .MobileHeader .MenuIcon .Open span:nth-child(1) {
   width: 20px;
   height: 2.5px;
   position: absolute;
@@ -180,13 +169,13 @@
   transform: rotate(45deg) translate(-50%, -50%);
   transform-origin: left top;
 }
-.Container .MobileHeader .Menu .Open span:nth-child(2) {
+.Container .MobileHeader .MenuIcon .Open span:nth-child(2) {
   width: 100%;
   height: 3px;
   transform: translateX(100%);
   opacity: 0;
 }
-.Container .MobileHeader .Menu .Open span:nth-child(3) {
+.Container .MobileHeader .MenuIcon .Open span:nth-child(3) {
   width: 20px;
   height: 2.5px;
   position: absolute;
@@ -194,6 +183,229 @@
   left: 50%;
   transform: rotate(-45deg) translate(-50%, -50%);
   transform-origin: left top;
+}
+.Container .MobileHeader .Menu {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 80%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: double 4px transparent;
+  border-radius: 25px;
+  background-image: linear-gradient(#fff, #fff), radial-gradient(circle at bottom left, rgba(38, 196, 133, 0.25), rgba(242, 242, 242, 0.1), rgba(6, 190, 225, 0.25));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+.Container .MobileHeader .Menu .MenuContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Container .MobileHeader .Menu .MenuContent .LinkButton {
+  color: rgba(13, 19, 33, 0.25);
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 7px 14px;
+}
+.Container .MobileHeader .Menu .MenuContent .TextButton {
+  margin-top: 15px;
+  color: #26c485;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 7px 14px;
+}
+.Container .MobileHeader .Menu .MenuContent .PrimaryButton {
+  background-color: #26c485;
+  color: rgba(242, 242, 242, 0.8);
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0px 20px 50px rgba(38, 196, 133, 0.25);
+  padding: 7px 14px;
+}
+.Container .MobileHeader .OpenMenu {
+  opacity: 1;
+  visibility: visible;
+}
+.Container .Home {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 60px;
+  padding-top: 30px;
+  padding-bottom: 250px;
+}
+.Container .Home .LandingPage {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Container .Home .LandingPage .LandingText {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.Container .Home .LandingPage .LandingText h1 {
+  font-size: 25px;
+  font-weight: 800;
+  color: #0D1321;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+.Container .Home .LandingPage .LandingText h1 span {
+  color: #06BEE1;
+}
+.Container .Home .LandingPage .LandingText p {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(13, 19, 33, 0.5);
+  margin-bottom: 30px;
+}
+.Container .Home .LandingPage .LandingText .Button {
+  background-color: #06bee1;
+  color: rgba(242, 242, 242, 0.8);
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0px 20px 50px rgba(6, 190, 225, 0.25);
+  padding: 7px 14px;
+  font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
+}
+.Container .Home .LandingPage .LandingImage {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.Container .Home .LandingPage .LandingImage .Image {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  right: -100px;
+}
+.Container .Home .Widget {
+  width: 100%;
+  min-height: 200px;
+  background-color: #06BEE1;
+  margin-top: 50px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.Container .Home .Widget .WidgetBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #06BEE1;
+  border-radius: 25px;
+  border: double 4px transparent;
+  border-radius: 25px;
+  background-image: linear-gradient(#06BEE1, #06BEE1), radial-gradient(circle at bottom left, rgba(38, 196, 133, 0.25), rgba(242, 242, 242, 0.1), rgba(6, 190, 225, 0.25));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0px 0px 100px rgba(6, 190, 225, 0.5);
+  pointer-events: none;
+}
+.Container .Home .Widget .WidgetBackground .Noise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #06BEE1;
+  border-radius: 25px;
+  mix-blend-mode: overlay;
+  opacity: 25%;
+}
+.Container .Home .Widget .WidgetInfo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+.Container .Home .Widget .WidgetInfo .WidgetInfoSides {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  margin: 20px;
+}
+.Container .Home .Widget .WidgetInfo .WidgetInfoSides .Oval {
+  width: 175px;
+  height: 100px;
+  border: 4px solid #F2F2F2;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #F2F2F2;
+  font-weight: bold;
+  font-size: 15px;
+}
+.Container .Home .Widget .WidgetInfo .WidgetInfoSides p {
+  font-size: 10px;
+  color: #F2F2F2;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.Container .Home .Widget .WidgetInfoCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.Container .Home .Widget .WidgetInfoCenter .Oval {
+  width: 120px;
+  height: 120px;
+  border: 4px solid #F2F2F2;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #F2F2F2;
+  font-weight: bold;
+  font-size: 22.5px;
+}
+.Container .Home .Widget .WidgetInfoCenter p {
+  font-size: 10px;
+  color: #F2F2F2;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-top: 10px;
 }
 
 @media screen and (max-width: 1000px) {

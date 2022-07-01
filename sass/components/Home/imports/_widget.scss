@@ -1,0 +1,100 @@
+.Widget {
+    width: 100%;
+    min-height: 200px;
+    background-color: $C3;
+    margin-top: 50px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    .WidgetBackground {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $C3;
+        border-radius: 25px;
+        @include GradientBorder($C3);
+        @include WidgetShadow($C3);
+        pointer-events: none;
+        .Noise {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $C3;
+            border-radius: 25px;
+            mix-blend-mode: overlay;
+            opacity: 25%;
+        }
+    }
+    .WidgetInfo {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 100;
+        flex-wrap: wrap;
+        .WidgetInfoSides {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            margin: 20px;
+            .Oval {
+                width: 175px;
+                height: 100px;
+                border: 4px solid $C4;
+                border-radius: 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: $C4;
+                font-weight: bold;
+                font-size: 15px;
+            }
+            p {
+                font-size: 10px;
+                color: $C4;
+                font-weight: 300;
+                text-transform: uppercase;
+                margin-top: 10px;
+            }
+        }
+    }
+    .WidgetInfoCenter {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        .Oval {
+            width: 120px;
+            height: 120px;
+            border: 4px solid $C4;
+            border-radius: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: $C4;
+            font-weight: bold;
+            font-size: 22.5px;
+        }
+        p {
+            font-size: 10px;
+            color: $C4;
+            font-weight: 300;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+    }
+}

@@ -2,10 +2,9 @@
 @import './global/mixins';
 .Container {
     width: 100%;
-    height: 100vh;
-    padding: 0 60px;
-    padding-top: 30px;
+    height: 100%;
     background: linear-gradient(107.56deg, #FAFAFA 0%, #EBF5F7 49.48%, #F2F2F2 100%);
+    overflow: hidden;
     .Background {
         width: 100%;
         height: 100%;
@@ -14,7 +13,6 @@
         left: 0;
         cursor: pointer;
         pointer-events: none;
-        overflow: hidden;
         .BackgroundImage {
             position: absolute;
             width: 100vw;
@@ -23,6 +21,7 @@
     }
     @import './components/Header/DesktopHeader';
     @import './components/Header/MobileHeader';
+    @import './components/Home/Home';
 }
 
 @media screen and (max-width: 1000px) {
