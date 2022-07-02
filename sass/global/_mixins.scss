@@ -13,3 +13,9 @@
 @mixin WidgetShadow($color) {
     box-shadow: 0px 0px 100px rgba($color, 0.5);
 }
+
+@mixin media($query) {
+    @media ($query) {
+        @content;
+    }
+}

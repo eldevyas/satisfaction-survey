@@ -1,5 +1,5 @@
 .Section {
-    margin: 50px 0px;
+    margin-top: 150px;
     position: relative;
     width: 100%;
     height: auto;
@@ -16,11 +16,11 @@
         justify-content: flex-start;
         align-items: flex-start;
         h2 {
-            font-size: 20px;
+            font-size: 25px;
             font-weight: bold;
             color: $C1;
             margin: 0px;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             span {
                 color: $C5;
             }
@@ -38,11 +38,11 @@
         justify-content: flex-start;
         align-items: flex-start;
         h2 {
-            font-size: 20px;
+            font-size: 25px;
             font-weight: bold;
             color: $C1;
             margin: 0px;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             span {
                 color: $C5;
             }
@@ -83,6 +83,39 @@
                         font-weight: 300;
                         color: rgba($C1, 0.5);
                         margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+    }
+    @include respond-to('small') {
+        margin-top: 100px;
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        >div {
+            width: 100%;
+        }
+        .How {
+            margin-top: 50px;
+            .HowInfo {
+                .Row {
+                    .Right {
+                        h4 {
+                            font-size: 11px;
+                            font-weight: bold;
+                            color: $C5;
+                        }
+                        p {
+                            font-size: 8px;
+                            font-weight: 300;
+                            color: rgba($C1, 0.5);
+                            margin-bottom: 0px;
+                        }
                     }
                 }
             }

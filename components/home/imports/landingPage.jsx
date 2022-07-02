@@ -1,6 +1,7 @@
 // Required modules and components
 import Image from 'next/image';
 import Button from '@mui/material/Button';
+import Link from 'next/link';
 
 const image = {
     url: '/../public/image/Image.png',
@@ -19,12 +20,11 @@ export default function LandingPage() {
                 C’est une enquéte de satisfaction pour aider l’administration à améliorer l’expérience éducationnel de votre institut NTIC Rabat, soyez libres d’éssayer.
             </p>
 
-            <Button
-                variant="contained"
-                className="Button"
-            >
-                Démarrer le sondage
-            </Button>
+            <Link href='/test'>
+                <Button variant="contained" className="Button">
+                    Démarrer le sondage
+                </Button>
+            </Link>
         </div>
 
         <div className="LandingImage">

@@ -1,14 +1,22 @@
 @import './../../global/variables';
 @import './../../global/mixins';
+@import './../../global/breakpoints';
 .Home {
     position: relative;
     width: 100%;
     height: 100%;
     padding: 0 60px;
     padding-top: 30px;
-    padding-bottom: 250px;
     @import './imports/landingPage';
     @import './imports/widget';
     @import './imports/section';
     @import './imports/section_2';
+}
+
+@import './imports/footer';
+@include respond-to('small') {
+    .Home {
+        padding: 0 30px !important;
+        padding-top: 20px;
+    }
 }

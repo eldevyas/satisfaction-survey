@@ -1,0 +1,59 @@
+.Footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+    user-select: none;
+    .Logo {
+        transform: scale(0.75);
+    }
+    .Footer-Details {
+        color: rgba($C1, 0.5);
+        font-size: 14px;
+        font-weight: 500;
+        span {
+            color: rgba($C3, 1);
+            font-size: 14px;
+            font-weight: 600;
+        }
+        span:not(:first-child) {
+            cursor: pointer;
+            &:hover {
+                color: rgba($C2, 1);
+            }
+            &:active {
+                color: rgba($C2, 0.75);
+            }
+        }
+    }
+    .Footer-Social {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 110px;
+        .Social-Icon {
+            margin-left: 20px;
+            width: 20px;
+            height: 20px;
+            fill: rgba($C1, 0.5);
+            &:hover {
+                fill: rgba($C2, 1);
+            }
+        }
+    }
+    @include respond-to('small') {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 30px;
+        .Footer-Details {
+            margin-bottom: 20px;
+            text-align: center;
+            margin-top: 30px;
+            line-height: 25px;
+        }
+        .Footer-Social {
+            margin-top: 20px;
+        }
+    }
+}

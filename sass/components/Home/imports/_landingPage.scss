@@ -53,4 +53,32 @@
             right: -100px;
         }
     }
+    @include respond-to('small') {
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: flex-start;
+        .LandingText {
+            width: 100%;
+            height: 100%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        .LandingImage {
+            position: relative;
+            width: 100%;
+            height: 300Px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 50px;
+            .Image {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                right: -40px;
+            }
+        }
+    }
 }

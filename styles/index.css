@@ -1,6 +1,7 @@
 .Container {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   background: linear-gradient(107.56deg, #FAFAFA 0%, #EBF5F7 49.48%, #F2F2F2 100%);
   overflow: hidden;
 }
@@ -14,9 +15,8 @@
   pointer-events: none;
 }
 .Container .Background .BackgroundImage {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 .Container .Header {
   width: 100%;
@@ -245,7 +245,6 @@
   height: 100%;
   padding: 0 60px;
   padding-top: 30px;
-  padding-bottom: 250px;
 }
 .Container .Home .LandingPage {
   position: relative;
@@ -302,6 +301,36 @@
   width: 70%;
   height: 100%;
   right: -100px;
+}
+@media (max-width: 767px) {
+  .Container .Home .LandingPage {
+    height: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .Container .Home .LandingPage .LandingText {
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .Container .Home .LandingPage .LandingImage {
+    position: relative;
+    width: 100%;
+    height: 300Px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .Container .Home .LandingPage .LandingImage .Image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    right: -40px;
+  }
 }
 .Container .Home .Widget {
   width: 100%;
@@ -408,7 +437,7 @@
   margin-top: 10px;
 }
 .Container .Home .Section {
-  margin: 50px 0px;
+  margin-top: 150px;
   position: relative;
   width: 100%;
   height: auto;
@@ -427,11 +456,11 @@
   align-items: flex-start;
 }
 .Container .Home .Section .Why h2 {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   color: #0D1321;
   margin: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .Container .Home .Section .Why h2 span {
   color: #E63946;
@@ -449,11 +478,11 @@
   align-items: flex-start;
 }
 .Container .Home .Section .How h2 {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   color: #0D1321;
   margin: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .Container .Home .Section .How h2 span {
   color: #E63946;
@@ -495,6 +524,35 @@
   font-weight: 300;
   color: rgba(13, 19, 33, 0.5);
   margin-bottom: 0px;
+}
+@media (max-width: 767px) {
+  .Container .Home .Section {
+    margin-top: 100px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .Container .Home .Section > div {
+    width: 100%;
+  }
+  .Container .Home .Section .How {
+    margin-top: 50px;
+  }
+  .Container .Home .Section .How .HowInfo .Row .Right h4 {
+    font-size: 11px;
+    font-weight: bold;
+    color: #E63946;
+  }
+  .Container .Home .Section .How .HowInfo .Row .Right p {
+    font-size: 8px;
+    font-weight: 300;
+    color: rgba(13, 19, 33, 0.5);
+    margin-bottom: 0px;
+  }
 }
 .Container .Home .Section-2 {
   width: 100%;
@@ -540,11 +598,94 @@
   align-items: center;
   right: -100px;
 }
-
-@media screen and (max-width: 1000px) {
-  .Container {
+@media (max-width: 767px) {
+  .Container .Home .Section-2 {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 100Px;
+  }
+  .Container .Home .Section-2 > div {
     width: 100%;
-    padding: 0;
+    height: 100%;
+    margin-top: 40px;
+  }
+  .Container .Home .Section-2 .Text {
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+  }
+  .Container .Home .Section-2 .Image {
+    width: 100%;
+    height: 100%;
+    right: 0px;
+  }
+}
+.Container .Footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px;
+  user-select: none;
+}
+.Container .Footer .Logo {
+  transform: scale(0.75);
+}
+.Container .Footer .Footer-Details {
+  color: rgba(13, 19, 33, 0.5);
+  font-size: 14px;
+  font-weight: 500;
+}
+.Container .Footer .Footer-Details span {
+  color: #06bee1;
+  font-size: 14px;
+  font-weight: 600;
+}
+.Container .Footer .Footer-Details span:not(:first-child) {
+  cursor: pointer;
+}
+.Container .Footer .Footer-Details span:not(:first-child):hover {
+  color: #26c485;
+}
+.Container .Footer .Footer-Details span:not(:first-child):active {
+  color: rgba(38, 196, 133, 0.75);
+}
+.Container .Footer .Footer-Social {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 110px;
+}
+.Container .Footer .Footer-Social .Social-Icon {
+  margin-left: 20px;
+  width: 20px;
+  height: 20px;
+  fill: rgba(13, 19, 33, 0.5);
+}
+.Container .Footer .Footer-Social .Social-Icon:hover {
+  fill: #26c485;
+}
+@media (max-width: 767px) {
+  .Container .Footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 30px;
+  }
+  .Container .Footer .Footer-Details {
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 30px;
+    line-height: 25px;
+  }
+  .Container .Footer .Footer-Social {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .Container .Home {
+    padding: 0 30px !important;
+    padding-top: 20px;
   }
 }
 
