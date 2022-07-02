@@ -1,8 +1,10 @@
 
 // Importing All of the Components from the imports Folder. 
+import Header from './../header/header'
 import LandingPage from './imports/landingPage';
 import Widget from './imports/widget';
-import Header from './../header/header'
+import Section from './imports/section';
+import Section_2 from './imports/section_2';
 
 export default function Content() {
     return (
@@ -11,6 +13,8 @@ export default function Content() {
         <div className="Home">
             <LandingPage />
             <Widget/>
+            <Section/> 
+            <Section_2/>
         </div>
     </>
     )

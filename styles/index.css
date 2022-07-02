@@ -407,6 +407,139 @@
   text-transform: uppercase;
   margin-top: 10px;
 }
+.Container .Home .Section {
+  margin: 50px 0px;
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: no-wrap;
+}
+.Container .Home .Section > div {
+  width: 45%;
+}
+.Container .Home .Section .Why {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.Container .Home .Section .Why h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0D1321;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+.Container .Home .Section .Why h2 span {
+  color: #E63946;
+}
+.Container .Home .Section .Why p {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(13, 19, 33, 0.5);
+  margin-bottom: 10px;
+}
+.Container .Home .Section .How {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.Container .Home .Section .How h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0D1321;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+.Container .Home .Section .How h2 span {
+  color: #E63946;
+}
+.Container .Home .Section .How .HowInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.Container .Home .Section .How .HowInfo .Row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.Container .Home .Section .How .HowInfo .Row .Left {
+  width: 50px;
+  height: 50px;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  background-color: #E63946;
+  color: #F2F2F2;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+.Container .Home .Section .How .HowInfo .Row .Right h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #E63946;
+}
+.Container .Home .Section .How .HowInfo .Row .Right p {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(13, 19, 33, 0.5);
+  margin-bottom: 0px;
+}
+.Container .Home .Section-2 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+}
+.Container .Home .Section-2 > div {
+  width: 45%;
+}
+.Container .Home .Section-2 .Text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.Container .Home .Section-2 .Text h4 {
+  font-size: 25px;
+  line-height: auto;
+  margin-bottom: 30px;
+  color: #0D1321;
+}
+.Container .Home .Section-2 .Text h4 span {
+  color: #26C485;
+}
+.Container .Home .Section-2 .Text p {
+  font-size: 14px;
+  line-height: auto;
+  color: rgba(13, 19, 33, 0.5);
+}
+.Container .Home .Section-2 .Text p:not(:last-child) {
+  margin-bottom: 20px;
+}
+.Container .Home .Section-2 .Image {
+  position: relative;
+  width: 45%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  right: -100px;
+}
 
 @media screen and (max-width: 1000px) {
   .Container {

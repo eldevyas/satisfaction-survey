@@ -1,0 +1,91 @@
+.Section {
+    margin: 50px 0px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: no-wrap;
+    >div {
+        width: 45%;
+    }
+    .Why {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: $C1;
+            margin: 0px;
+            margin-bottom: 20px;
+            span {
+                color: $C5;
+            }
+        }
+        p {
+            font-size: 14px;
+            font-weight: 300;
+            color: rgba($C1, 0.5);
+            margin-bottom: 10px;
+        }
+    }
+    .How {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: $C1;
+            margin: 0px;
+            margin-bottom: 20px;
+            span {
+                color: $C5;
+            }
+        }
+        .HowInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            .Row {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                margin-bottom: 25px;
+                .Left {
+                    width: 50px;
+                    height: 50px;
+                    aspect-ratio: 1;
+                    border-radius: 10px;
+                    background-color: $C5;
+                    color: $C4;
+                    font-weight: bold;
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 20px;
+                }
+                .Right {
+                    h4 {
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: $C5;
+                    }
+                    p {
+                        font-size: 12px;
+                        font-weight: 300;
+                        color: rgba($C1, 0.5);
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+    }
+}

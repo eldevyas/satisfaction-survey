@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="id">
         <Head>
             <meta charSet="utf-8" />
-            <link rel="icon" type="image/x-icon" href="http://localhost/SatisfactionSurvey/static/images/favicon.ico" />
+            <link rel="icon" type="image/x-icon" href="/ico/favicon.ico" />
         </Head>
         <body className="custom_class">
             <Main />

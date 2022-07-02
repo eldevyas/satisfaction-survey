@@ -1,0 +1,44 @@
+.Section-2 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    >div {
+        width: 45%;
+    }
+    .Text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        h4 {
+            font-size: 25px;
+            line-height: auto;
+            margin-bottom: 30px;
+            color: $C1;
+            span {
+                color: $C2;
+            }
+        }
+        p {
+            font-size: 14px;
+            line-height: auto;
+            color: rgba($C1, 0.5);
+        }
+        p:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+    .Image {
+        position: relative;
+        width: 45%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        right: -100px;
+    }
+}
