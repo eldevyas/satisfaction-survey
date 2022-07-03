@@ -10,7 +10,7 @@ export default function Home() {
         </Head>
 
         <div className="Background">
-            <Image className="BackgroundImage" src={"/../public/image/background.png"} alt="background" width={1920} height={1080}/>
+            <Image className="BackgroundImage" src={"/../public/image/background.png"} alt="background" layout='fill' objectFit='cover'/>
         </div>
         
         <Content />

@@ -14,22 +14,22 @@ export default function LandingPage() {
     return (
       <div className="LandingPage">
         <div className="LandingText">
-            <h1>Améliorez l’institut en remplissant un sondage <span>simple</span></h1>
+            <h1>Améliorez l’institut en remplissant une enquête <span>simple</span></h1>
 
             <p>
                 C’est une enquéte de satisfaction pour aider l’administration à améliorer l’expérience éducationnel de votre institut NTIC Rabat, soyez libres d’éssayer.
             </p>
 
-            <Link href='/test'>
+            <Link href='/sondage/'>
                 <Button variant="contained" className="Button">
-                    Démarrer le sondage
+                    Démarrer l'enquête
                 </Button>
             </Link>
         </div>
 
         <div className="LandingImage">
             <div className="Image">
-                <Image src={image.url} alt={image.alt}  layout="fill" objectFit='contain'/>
+                <Image priority='false' src={image.url} alt={image.alt}  layout="fill" objectFit='contain'/>
             </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ export default function Section() {
     return(
         <div className='Section'>
             <div className='Why'>
-                <h2>Pourquoi faire un <span>sondage</span>?</h2>
+                <h2>Pourquoi faire une <span>Enquête</span>?</h2>
 
                 <p>
                 Pour la meilleure satisfaction des stagiaires, l'administration de l'institut a besoin de savoir comment ils se sentent et comment les choses se passent réellement à l'intérieur des salles de classe. Nous essayons de maintenir une bonne expérience de l'éducation en améliorant nos qualités.
@@ -20,8 +20,8 @@ export default function Section() {
                     <div className='Row'>
                         <div className='Left'>1.</div>
                         <div className='Right'>
-                            <h4>Remplissement du sondage</h4>
-                            <p>Vous remplisser le formulaire du sondage  en quelques minutes.</p>
+                            <h4>Remplissement de  l'enquête</h4>
+                            <p>Vous remplisser le formulaire de  l'enquête  en quelques minutes.</p>
                         </div>
                     </div>
 

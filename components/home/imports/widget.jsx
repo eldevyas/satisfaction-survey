@@ -14,7 +14,7 @@ export default function Widget() {
                         24 Jun 2022
                     </div>
 
-                    <p>Dernier Sondage</p>
+                    <p>Dernier Enquête</p>
                 </div>
 
                 <div className="WidgetInfoCenter">
@@ -40,7 +40,7 @@ export default function Widget() {
                         05:46
                     </div>
 
-                    <p>Temps moyen écoulé lors du sondage</p>   
+                    <p>Temps moyen écoulé lors de  l'enquête</p>   
                 </div>
             </div>
         </div>

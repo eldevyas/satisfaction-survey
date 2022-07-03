@@ -87,7 +87,7 @@ class ResponsiveHeader extends React.Component {
                     variant="text"
                     className="TextButton"
                     >
-                        Sondage
+                        Enquête
                     </Button>
                     <Button 
                     variant="primary"
@@ -147,7 +147,7 @@ class ResponsiveHeader extends React.Component {
                         variant="text"
                         className="TextButton"
                         >
-                            Sondage
+                            Enquête
                         </Button>
 
                         <Button

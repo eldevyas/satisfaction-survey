@@ -1,0 +1,97 @@
+@import './global/variables';
+@import './global/mixins';
+@import './global/breakpoints';
+.P404 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(107.56deg, #FAFAFA 0%, #EBF5F7 49.48%, #F2F2F2 100%);
+    user-select: none;
+    .Background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+    }
+    .T404 {
+        max-width: 800px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .Code {
+            font-size: 6rem;
+            color: $C5;
+        }
+        .Title {
+            font-size: 20px;
+            font-weight: 700;
+            color: $C5;
+            margin-bottom: 1.5rem;
+        }
+        .Description {
+            font-size: 14px;
+            color: rgba($C1, 0.5);
+        }
+        .Buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            width: 300px;
+            .TextButton {
+                @include TextButton($C5);
+                width: 47.5%;
+                border: 1.5px solid rgba($C5, 1);
+                box-sizing: border-box !important;
+                font-size: 12px;
+            }
+            .PrimaryButton {
+                @include PrimaryButton($C5);
+                width: 47.5%;
+                box-sizing: border-box !important;
+                border: 1.5px solid rgba($C5, 1);
+                font-size: 12px;
+            }
+        }
+    }
+    @include respond-to('small') {
+        .T404 {
+            .Code {
+                font-size: 5rem;
+            }
+            .Title {
+                font-size: 16px;
+            }
+            .Description {
+                font-size: 12px;
+                width: 90%;
+            }
+            .Buttons {
+                width: 200px;
+                .TextButton {
+                    @include TextButton($C5);
+                    width: 100%;
+                    border: 1.5px solid rgba($C5, 1);
+                    box-sizing: border-box !important;
+                    font-size: 12px;
+                }
+                .PrimaryButton {
+                    @include PrimaryButton($C5);
+                    width: 100%;
+                    box-sizing: border-box !important;
+                    border: 1.5px solid rgba($C5, 1);
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

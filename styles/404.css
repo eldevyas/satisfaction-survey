@@ -1,0 +1,116 @@
+.P404 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(107.56deg, #FAFAFA 0%, #EBF5F7 49.48%, #F2F2F2 100%);
+  user-select: none;
+}
+.P404 .Background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.P404 .T404 {
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.P404 .T404 .Code {
+  font-size: 6rem;
+  color: #E63946;
+}
+.P404 .T404 .Title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #E63946;
+  margin-bottom: 1.5rem;
+}
+.P404 .T404 .Description {
+  font-size: 14px;
+  color: rgba(13, 19, 33, 0.5);
+}
+.P404 .T404 .Buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  width: 300px;
+}
+.P404 .T404 .Buttons .TextButton {
+  color: #e63946;
+  margin-right: 15px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 7px 14px;
+  font-family: Poppins, sans-serif;
+  width: 47.5%;
+  border: 1.5px solid #e63946;
+  box-sizing: border-box !important;
+  font-size: 12px;
+}
+.P404 .T404 .Buttons .PrimaryButton {
+  background-color: #e63946;
+  color: rgba(242, 242, 242, 0.8);
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0px 20px 50px rgba(230, 57, 70, 0.25);
+  padding: 7px 14px;
+  font-family: Poppins, sans-serif;
+  width: 47.5%;
+  box-sizing: border-box !important;
+  border: 1.5px solid #e63946;
+  font-size: 12px;
+}
+@media (max-width: 767px) {
+  .P404 .T404 .Code {
+    font-size: 5rem;
+  }
+  .P404 .T404 .Title {
+    font-size: 16px;
+  }
+  .P404 .T404 .Description {
+    font-size: 12px;
+    width: 90%;
+  }
+  .P404 .T404 .Buttons {
+    width: 200px;
+  }
+  .P404 .T404 .Buttons .TextButton {
+    color: #e63946;
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 7px 14px;
+    font-family: Poppins, sans-serif;
+    width: 100%;
+    border: 1.5px solid #e63946;
+    box-sizing: border-box !important;
+    font-size: 12px;
+  }
+  .P404 .T404 .Buttons .PrimaryButton {
+    background-color: #e63946;
+    color: rgba(242, 242, 242, 0.8);
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0px 20px 50px rgba(230, 57, 70, 0.25);
+    padding: 7px 14px;
+    font-family: Poppins, sans-serif;
+    width: 100%;
+    box-sizing: border-box !important;
+    border: 1.5px solid #e63946;
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=404.css.map */
