@@ -1,4 +1,4 @@
-.React {
+.Choose {
     width: 100%;
     height: 100%;
     min-height: 500px;
@@ -41,61 +41,34 @@
     }
     .Answers {
         width: 100%;
-        height: 50px;
+        height: auto;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
+        user-select: none;
         .Answer {
-            width: 17.5%;
-            height: 100%;
+            width: 100%;
+            font-size: 12px;
+            text-align: center;
+            color: rgba($C1, 0.3);
+            background-color: $C4;
+            height: 30px;
+            margin-bottom: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 15px;
-            background-color: $C4;
-            user-select: none;
+            border-radius: 25px;
+            cursor: pointer;
             transition: all 0.1s ease;
-            svg {
-                color: rgba($C1, 0.2);
-                user-select: none;
-                pointer-events: none;
-            }
             &:not(.Selected):hover {
                 background-color: rgba($C1, 0.1);
-                cursor: pointer;
-                svg {
-                    color: rgba($C1, 0.2);
-                }
+                box-shadow: 25px 0px 100px rgba($C3, 0.25);
             }
         }
-        .Big {
-            height: 100%;
-            svg {
-                font-size: 22.5px;
-            }
-        }
-        .Medium {
-            height: 75% + 15%;
-            svg {
-                font-size: 20px;
-            }
-        }
-        .Small {
-            height: 70%;
-            svg {
-                font-size: 17.5px;
-            }
-        }
-        .Selected:not(svg) {
-            background-color: $C3;
-            box-shadow: 25px 0px 100px rgba($C3, 0.5);
-            cursor: pointer;
-            svg {
-                color: $C4;
-            }
-            &:hover {
-                background-color: rgba($C3, 0.75);
-            }
+        .Selected {
+            background-color: rgba($C3, 1);
+            color: $C4;
         }
     }
     .Buttons {

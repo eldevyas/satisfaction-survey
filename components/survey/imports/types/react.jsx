@@ -1,57 +1,126 @@
-import Button from '@mui/material/button';
-
-
+import Button from '@mui/material/Button';
 
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied';
 import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
+import React from 'react';
 
 
-export default function Reacts() {
-    return (
-        <div className="React">
+export default class Reacts extends React.Component {
+    // Get question from props
+    constructor(props) {
+        super(props);
+        this.state = {
+            question: this.props.question,
+            response: {
+                    id: this.props.id,
+                    question: this.props.question,
+                    answer: null,
+                }
+            ,
+            currentAnswer: 0,
+            loading: false
+        };
+    }
 
-            <div className="Question">
-                <p className="Question-index">Question 1</p>
+    handleClick = (event) => {
+        event.preventDefault();
 
-                <p className="Question-description">Dans quelle mesure êtes-vous d'accord ou en désaccord avec l’énoncé suivant?</p>
+        const divs = document.querySelectorAll('.React .Answers .Answer');
 
-                <h2 className="Question-title">
-                    Mes professeurs expliquent les choses d'une manière que je comprends
-                </h2>
+        // Remove selected class from all divs
+        divs.forEach(div => {
+            if (div.classList.contains('Selected') && /* is not the clicked div */ div !== event.target) {
+                div.classList.remove('Selected');
+            }
+        });
+        
+        // Add Selected class to clicked div
+        const clicked = event.target;
+        clicked.classList.toggle('Selected');
 
-                <p className="Question-description">Tout à gauche signifie fortement en désaccord et tout à droite signifie fortement d'accord.</p>
+        // Update state with new answer.
+        this.setState({
+            question: this.props.question,
+            response: {
+                id: this.props.id,
+                question: this.props.question,
+                answer: clicked.dataset.value,
+            }
+        });
+    }
+
+    handleNext = () => {
+        // Check if an answer is selected
+        const divs = document.querySelectorAll('.React .Answers .Answer');
+        let selected = false;
+
+        divs.forEach(div => {
+            if (div.classList.contains('Selected')) {
+                selected = true;
+            }
+        });
+
+        if (selected) {
+            this.props.callNextQuestion();
+            this.props.result(this.state.answers);
+        } else {
+            alert('Veuillez sélectionner une réponse.');
+        }
+    }
+
+    handlePrevious = () => {
+        this.props.callPreviousQuestion();
+    }
+        
+    
+    render() {
+
+        return (
+            <div className="React">
+        
+                <div className="Question">
+                    <p className="Question-index">Question 1</p>
+        
+                    <p className="Question-description">Dans quelle mesure êtes-vous d'accord ou en désaccord avec l’énoncé suivant?</p>
+        
+                    <h2 className="Question-title">
+                        {this.props.question}
+                    </h2>
+        
+                    <p className="Question-description">Tout à gauche signifie fortement en désaccord et tout à droite signifie fortement d'accord.</p>
+                </div>
+        
+                <div className="Answers">
+                    <div className="Answer Big" onClick={this.handleClick}>
+                        <SentimentVeryDissatisfiedIcon/>
+                    </div>
+        
+                    <div className="Answer Medium" onClick={this.handleClick}>
+                        <SentimentDissatisfiedIcon/>
+                    </div>
+        
+                    <div className="Answer Small" onClick={this.handleClick}>
+                        <SentimentNeutralIcon/>
+                    </div>
+        
+                    <div className="Answer Medium" onClick={this.handleClick}>
+                        <SentimentSatisfiedAltIcon/>
+                    </div>
+        
+                    <div className="Answer Big" onClick={this.handleClick}>
+                        <SentimentVerySatisfiedIcon/>
+                    </div>
+                </div>
+        
+                <div className="Buttons">
+                    <Button variant="text" className='btnText' onClick={this.handlePrevious}>Précédent</Button>
+                    <Button variant="primary" className='btnPrimary' onClick={this.handleNext}>Suivant</Button>
+                </div>
+        
             </div>
-
-            <div className="Answers">
-                <div className="Answer Big">
-                    <SentimentVeryDissatisfiedIcon/>
-                </div>
-
-                <div className="Answer Medium">
-                    <SentimentDissatisfiedIcon/>
-                </div>
-
-                <div className="Answer Small">
-                    <SentimentNeutralIcon/>
-                </div>
-
-                <div className="Answer Medium">
-                    <SentimentSatisfiedAltIcon/>
-                </div>
-
-                <div className="Answer Big">
-                    <SentimentVerySatisfiedIcon/>
-                </div>
-            </div>
-
-            <div className="Buttons">
-                <Button variant="text" className='btnText'>Précédent</Button>
-                <Button variant="primary" className='btnPrimary'>Suivant</Button>
-            </div>
-
-        </div>
-    )
+        )
+    }
 }

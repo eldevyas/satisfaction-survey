@@ -10,7 +10,7 @@ export default function Enquête() {
             </Head>
 
             <div className="Background">
-                <Image className="BackgroundImage" src={"/../public/image/background.png"} alt="background" layout='fill' objectFit='cover'/>
+                <Image priority="false" className="BackgroundImage" src={"/image/background.png"} alt="background" layout='fill' objectFit='cover'/>
             </div>
 
             <Sondage/>

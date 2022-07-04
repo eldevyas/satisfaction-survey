@@ -1,8 +1,9 @@
 import Image from 'next/image';
-import Button from '@mui/material/button';
+import Button from '@mui/material/Button';
 import Link from 'next/link';
 
-export default function Bienvenue() {
+export default function Bienvenue(props) {
+
     return(
         <div className="Bienvenue">
             <div className="Text">
@@ -17,7 +18,7 @@ export default function Bienvenue() {
                 <Link href="/">
                     <Button variant="text" className='btnText'>Accueil</Button>
                 </Link>
-                <Button variant="primary" className='btnPrimary'>Commencer</Button>
+                <Button variant="primary" className='btnPrimary' onClick={props.initializeQuestion}>Commencer</Button>
             </div>
         </div>
     )
