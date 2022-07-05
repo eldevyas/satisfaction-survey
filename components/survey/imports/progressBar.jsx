@@ -1,20 +1,19 @@
 import { Component , useState , useEffect } from 'react';
 
-const ProgressBar = () => {
-    // Progress bar
-    const [progress, setProgress] = useState(0);
+const ProgressBar = (props) => {
+    // Progress bar gets width from the props
+    const [progressWidth, setProgressWidth] = useState(100);
+    const [progressColor, setProgressColor] = useState('#26C485');
 
-    const addProgress = () => {
-        if (progress < 100) {
-            setProgress(progress + 10);
-        } else {
-            setProgress(0);
-        }
-    }
+    useEffect(() => {
+        setProgressWidth(props.current / props.length * 100);
+        setProgressColor(props.color);
+    }, [props.current, props.length, props.color]);
+
 
     return (
-        <div className="progress-bar" onClick={addProgress}>
-            <div className="progress-bar-fill" style={{width: progress + '%'}}/>
+        <div className="progress-bar">
+            <div className="progress-bar-fill" style={{width: progressWidth + '%', backgroundColor: progressColor}}/>
         </div>
     );
 }

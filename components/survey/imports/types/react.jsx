@@ -117,7 +117,7 @@ export default class Reacts extends React.Component {
         
                 <div className="Buttons">
                     <Button variant="text" className='btnText' onClick={this.handlePrevious}>Précédent</Button>
-                    <Button variant="primary" className='btnPrimary' onClick={this.handleNext}>Suivant</Button>
+                    <Button variant="primary" className='btnPrimary' onClick={this.handleNext}>{this.props.lastQuestion ? 'Soumettre' : 'Suivant'}</Button>
                 </div>
         
             </div>
