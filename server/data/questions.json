@@ -1,0 +1,19 @@
+[{
+        "question": "Mes professeurs expliquent les choses d'une manière que je comprends",
+        "id": 1,
+        "index": 1,
+        "type": "React"
+    },
+    {
+        "question": "Est-ce que l'un des éléments suivants vous empêche de faire de votre mieux à l'école ?",
+        "type": "Choose",
+        "id": 2,
+        "index": 2,
+        "answers": [
+            { "text": "Ma vie à la maison", "value": 1 },
+            { "text": "Responsabilités familiales", "value": 2 },
+            { "text": "Responsabilités parascolaires", "value": 3 },
+            { "text": "Se faire cueillir", "value": 4 }
+        ]
+    }
+]

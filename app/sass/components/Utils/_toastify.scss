@@ -1,0 +1,90 @@
+// Apple
+$AppleGreen: #00CA4E;
+$AppleYellow: #FFBD44;
+$AppleRed: #FF605C;
+// Warning Color
+$WarningColor: #FF7900;
+// Info Color
+$InfoColor: $AppleGreen;
+// Error Color
+$ErrorColor: #FF6347;
+
+/** Used to define container behavior: width, position: fixed etc... **/
+
+$nfWidth: 350px;
+$nfHeight: 40px;
+$nfMargin: 20px;
+.Toastify__toast-container {
+    z-index: 200;
+    user-select: none;
+    @include respond-to('small') {
+        width: 90%;
+        margin: 0 auto;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 5%;
+    }
+}
+
+.Toastify__toast-container--bottom-left {
+    height: auto;
+    max-height: 100%;
+    min-height: 40px;
+}
+
+
+/** Classes for the displayed toast **/
+
+.Toastify__toast {
+    width: 100%;
+    height: $nfHeight !important;
+    max-height: $nfHeight !important;
+    position: relative;
+    background-color: rgba(#fff, 0.25);
+    backdrop-filter: blur(25px);
+    border: 1px solid $C4;
+    border-radius: 5px;
+    color: $C4;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    padding-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    // animation: SlideFromLeft 3000ms ease forwards;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+:root {
+    --toastify-toast-min-height: 40px;
+    --toastify-toast-max-height: 40px;
+}
+
+
+/** Used to position the icon **/
+
+.Toastify__toast-icon svg {
+    color: $C4 !important;
+    fill: $C4;
+}
+
+
+/** Classes for the close button. Better use your own closeButton **/
+
+.Toastify__close-button {
+    display: none;
+}
+
+.Toastify__toast-theme--light.Toastify__toast--error {
+    background-color: $ErrorColor !important;
+}
+
+.Toastify__toast-theme--light.Toastify__toast--warning {
+    background-color: $WarningColor !important;
+    color: $C4 !important;
+}
