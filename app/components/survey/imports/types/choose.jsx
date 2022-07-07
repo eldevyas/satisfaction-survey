@@ -15,7 +15,7 @@ export default class Reacts extends React.Component {
 
         this.state = {
             question: this.props.question,
-            currentAnswer: 0,
+            currentAnswer: this.props.current,
             choices: this.props.choices,
         };
     }
@@ -51,7 +51,7 @@ export default class Reacts extends React.Component {
         if (selected) {
             // Remove selected class from all divs
             divs.forEach(div => {
-                if (div.classList.contains('Selected') && /* is not the clicked div */ div !== event.target) {
+                if (div.classList.contains('Selected')) {
                     div.classList.remove('Selected');
                 }
             });
@@ -90,7 +90,7 @@ export default class Reacts extends React.Component {
                         this.props.choices.map((answer, index) => {
                             return (
                                 <div className="Answer" key={index} onClick={this.handleClick}>
-                                    {answer}
+                                    {answer.text}
                                 </div>
                             )
                         })

@@ -68,7 +68,7 @@ export default class Reacts extends React.Component {
 
         if (selected) {
             this.props.callNextQuestion();
-            this.props.result(this.state.answers);
+            // this.props.result(this.state.answers);
         } else {
             pushWarning('Veuillez sélectionner une réponse.');
         }

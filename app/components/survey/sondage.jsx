@@ -9,39 +9,7 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 //Axios
 import axios from 'axios';
 
-import { pushFailure } from './../../functions/alert';
-
-const Questions = [
-    {
-        id: 1,
-        question: "Mes professeurs expliquent les choses d'une manière que je comprends",
-        type: "react"
-    },
-    {
-        id: 2,
-        question: "Est-ce que l'un des éléments suivants vous empêche de faire de votre mieux à l'école ?",
-        type: "choose",
-        choices: [
-            "Ma vie à la maison",
-            "Responsabilités familiales",
-            "Se faire cueillir",
-            "Responsabilités parascolaires",
-            "Aucune des choses ci-dessus"
-        ]
-    },
-    {
-        id: 3,
-        question: "Votre professeur vous traite-t-il avec respect ?",
-        type: "choose",
-        choices: [
-            "Non presque jamais",
-            "Non",
-            "Oui",
-            "Oui très souvent",
-            "Je ne sais pas"
-        ]
-    }
-];
+import { pushFailure , pushSuccess, pushWarning} from './../../functions/alert';
 
 
 class Wrapper extends React.Component {
@@ -61,9 +29,8 @@ class Wrapper extends React.Component {
             loading: true
         });
 
-        axios.get('http://localhost/SatisfactionSurvey/server/data/questions.json')
+        axios.get('http://localhost/SatisfactionSurvey/server/')
             .then(response => {
-                console.log(response);
                 this.setState({
                     questions: response.data,
                     currentQuestion: null,
@@ -72,10 +39,13 @@ class Wrapper extends React.Component {
             })
             .catch(error => {
                 pushFailure(error.message);
-                this.setState({
-                    loading: false,
-                    questions: null
-                });
+
+                setTimeout(() => {
+                    this.setState({
+                        loading: false,
+                        questions: null
+                    });
+                } , 2000);
             }
         );
     }
@@ -144,39 +114,11 @@ class Wrapper extends React.Component {
         this.props.sendProgress(data);
     }
 
-    // Add the current answer to the answers array
-    addResponse = ( id, question, answer ) => {
-        const answers = this.state.answers;
+    // Add the answer of the current question to the Answers Array.
+    addAnswer = (answer) => {
 
-        if (answers.length === 0) {
-            answers.push({
-                id: id,
-                question: question,
-                answer: answer
-            });
-        } else {
-            let found = false;
-
-            answers.forEach(prevAnswer => {
-                if (prevAnswer.id === id) {
-                    prevAnswer.answer = answer;
-                    found = true;
-                }
-            });
-
-            if (!found) {
-                answers.push({
-                    id: id,
-                    question: question,
-                    answer: answer
-                });
-            }
-        }
-        
-        this.setState({
-            answers: answers
-        });
     }
+
 
     render() {
         const  renderQuestion = (question, current, length) => {
@@ -187,9 +129,9 @@ class Wrapper extends React.Component {
                 if (!(current === null) && !(current === length)) {
                     switch (question.type) {
                         case "react":
-                            return <Reacts question={question.question} id={question.id} callNextQuestion={this.nextQuestion} callPreviousQuestion={this.previousQuestion} result={this.addResponse}/>;
+                            return <Reacts question={question.question} id={question.id} index={question.index} callNextQuestion={this.nextQuestion} callPreviousQuestion={this.previousQuestion} result={this.addResponse}/>;
                         case "choose":
-                            return <Choose question={question.question} choices={question.choices} callNextQuestion={this.nextQuestion} callPreviousQuestion={this.previousQuestion} lastQuestion={isLastOne}/>;
+                            return <Choose question={question.question} id={question.id} index={question.index}  choices={question.choices} callNextQuestion={this.nextQuestion} callPreviousQuestion={this.previousQuestion} lastQuestion={isLastOne}/>;
                         default:
                             return (
                                 <div className="loadingContainer">
@@ -200,7 +142,7 @@ class Wrapper extends React.Component {
 
                                     <p>Il semble que le type des données reçus de l'API est incorrect. Vous pouvez réintialiser la requète en clickant la button çi-dessous. </p>
 
-                                    <Button variant="outlined" onClick={() => {}} className="buttonRefresh" endIcon={<RefreshIcon/>} >Réessayer</Button>
+                                    <Button variant="outlined" onClick={() => {this.getQuestions();}} className="buttonRefresh" endIcon={<RefreshIcon/>} >Réessayer</Button>
                                 </div>
                             )
                     }
