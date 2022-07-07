@@ -31,11 +31,14 @@ class Wrapper extends React.Component {
 
         axios.get('http://localhost/SatisfactionSurvey/server/')
             .then(response => {
-                this.setState({
-                    questions: response.data,
-                    currentQuestion: null,
-                    loading: false
-                });
+                setTimeout(() => {
+                    this.setState({
+                        questions: response.data,
+                        currentQuestion: null,
+                        loading: false
+                    });
+                } , 500);
+
             })
             .catch(error => {
                 pushFailure(error.message);

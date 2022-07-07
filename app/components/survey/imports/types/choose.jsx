@@ -64,7 +64,7 @@ export default class Reacts extends React.Component {
             pushWarning('Veuillez sélectionner une réponse.');
         }
     }
-
+    
     handlePrevious = () => {
         this.props.callPreviousQuestion();
     }
