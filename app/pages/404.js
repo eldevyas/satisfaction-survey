@@ -26,7 +26,7 @@ export default function Custom404() {
             </Head>
 
             <div className="Background">
-                <Image className="BackgroundImage" src={"/../public/image/background.png"} alt="background" layout='fill' objectFit='cover'/>
+                <Image className="BackgroundImage" src={"/image/background.png"} alt="background" layout='fill' objectFit='cover'/>
             </div>
 
             <div className="T404">

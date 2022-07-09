@@ -31,9 +31,10 @@ class Wrapper extends React.Component {
 
         axios.get('https://api.jsonbin.io/v3/b/62c97a915d53821c30966f4a/latest')
             .then(response => {
+                console.log(response.data.record);
                 setTimeout(() => {
                     this.setState({
-                        questions: response.data,
+                        questions: response.data.record,
                         currentQuestion: null,
                         loading: false
                     });
@@ -80,7 +81,7 @@ class Wrapper extends React.Component {
         const length = this.state.questions.length;
 
         var isLastOne = (current + 1) === length;
-        if (!isLastOne) {
+        if (!isLastOne && this.state.questions.length !== 0) {
             if (this.state.currentQuestion < this.state.questions.length - 1) {
                 this.setState({
                     currentQuestion: this.state.currentQuestion + 1
