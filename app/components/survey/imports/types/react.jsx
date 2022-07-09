@@ -8,7 +8,7 @@ import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfi
 import React from 'react';
 
 // Alerts
-import { pushSucess, pushFailure, pushWarning } from './../../../../functions/alert';
+import { pushSuccess, pushFailure, pushWarning } from './../../../../functions/alert';
 
 
 export default class Reacts extends React.Component {
@@ -16,43 +16,48 @@ export default class Reacts extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            question: this.props.question,
-            response: {
-                    id: this.props.id,
-                    question: this.props.question,
-                    answer: null,
-                }
-            ,
-            currentAnswer: 0,
-            loading: false
+            question: this.props.question
         };
+
+        this.responseBack = {
+            id: this.props.id,
+            answer: null
+        }
+
+        this.currentAnswer = null
     }
 
     handleClick = (event) => {
-        event.preventDefault();
 
-        const divs = document.querySelectorAll('.React .Answers .Answer');
-
-        // Remove selected class from all divs
-        divs.forEach(div => {
-            if (div.classList.contains('Selected') && /* is not the clicked div */ div !== event.target) {
-                div.classList.remove('Selected');
-            }
-        });
-        
-        // Add Selected class to clicked div
+        // Get clicked target from event
         const clicked = event.target;
-        clicked.classList.toggle('Selected');
 
-        // Update state with new answer.
-        this.setState({
-            question: this.props.question,
-            response: {
-                id: this.props.id,
-                question: this.props.question,
-                answer: clicked.dataset.value,
-            }
+        // Remove selected class from all other divs
+        const answers = document.querySelectorAll('.React .Answers .Answer');
+        
+        answers.forEach(answer => {
+            if (answer.classList.contains('Selected') && answer !== clicked) {
+                answer.classList.remove('Selected');
+            } 
         });
+
+        // Add selected class to clicked div
+        if (!clicked.classList.contains('Selected')) {
+            clicked.classList.add('Selected');
+
+            // Get answer from clicked div
+            const answer = document.querySelector('.React .Answers .Answer.Selected').getAttribute('answer');
+
+            // Set current answer to answer
+            this.currentAnswer = answer;
+        } else {
+            clicked.classList.remove('Selected');
+
+            // Set current answer to null
+            this.setState({
+                currentAnswer: null,
+            });
+        }
     }
 
     handleNext = () => {
@@ -67,8 +72,18 @@ export default class Reacts extends React.Component {
         });
 
         if (selected) {
-            this.props.callNextQuestion();
-            // this.props.result(this.state.answers);
+            if (this.currentAnswer !== null && this.currentAnswer !== undefined && this.currentAnswer !== 0) {
+
+                this.responseBack = {
+                        id: this.props.id,
+                        answer: this.currentAnswer
+                }
+                    
+                this.props.addAnswer(this.responseBack);
+                this.props.callNextQuestion();
+            } else {
+                pushFailure('Aucune réponse n\'a été sélectionnée.');
+            }
         } else {
             pushWarning('Veuillez sélectionner une réponse.');
         }
@@ -85,7 +100,7 @@ export default class Reacts extends React.Component {
             <div className="React">
         
                 <div className="Question">
-                    <p className="Question-index">Question 1</p>
+                    <p className="Question-index">Question {this.props.index}</p>
         
                     <p className="Question-description">Dans quelle mesure êtes-vous d'accord ou en désaccord avec l’énoncé suivant?</p>
         
@@ -97,23 +112,23 @@ export default class Reacts extends React.Component {
                 </div>
         
                 <div className="Answers">
-                    <div className="Answer Big" onClick={this.handleClick}>
+                    <div className="Answer Big BigNegative" onClick={this.handleClick} answer='Très insatisfait'>
                         <SentimentVeryDissatisfiedIcon/>
                     </div>
         
-                    <div className="Answer Medium" onClick={this.handleClick}>
+                    <div className="Answer Medium MediumNegative" onClick={this.handleClick} answer='Insatisfait'>
                         <SentimentDissatisfiedIcon/>
                     </div>
         
-                    <div className="Answer Small" onClick={this.handleClick}>
+                    <div className="Answer Small SmallNeutral" onClick={this.handleClick} answer='Neutre'>
                         <SentimentNeutralIcon/>
                     </div>
         
-                    <div className="Answer Medium" onClick={this.handleClick}>
+                    <div className="Answer Medium MediumPositive" onClick={this.handleClick} answer='Satisfait'>
                         <SentimentSatisfiedAltIcon/>
                     </div>
         
-                    <div className="Answer Big" onClick={this.handleClick}>
+                    <div className="Answer Big BigPositive" onClick={this.handleClick} answer='Très satisfait'>
                         <SentimentVerySatisfiedIcon/>
                     </div>
                 </div>

@@ -29,7 +29,7 @@ class Wrapper extends React.Component {
             loading: true
         });
 
-        axios.get('http://localhost/SatisfactionSurvey/server/')
+        axios.get('https://api.jsonbin.io/v3/b/62c97a915d53821c30966f4a/latest')
             .then(response => {
                 setTimeout(() => {
                     this.setState({
@@ -38,7 +38,6 @@ class Wrapper extends React.Component {
                         loading: false
                     });
                 } , 500);
-
             })
             .catch(error => {
                 pushFailure(error.message);
@@ -77,23 +76,48 @@ class Wrapper extends React.Component {
 
     // Increment the current question by 1
     nextQuestion = () => {
-        if (this.state.currentQuestion < this.state.questions.length - 1) {
-            this.setState({
-                currentQuestion: this.state.currentQuestion + 1
-            });
-        } else if (this.state.currentQuestion === this.state.questions.length - 1) {
-            this.setState({
-                currentQuestion: this.state.questions.length
-            });
+        const current = this.state.currentQuestion;
+        const length = this.state.questions.length;
+
+        var isLastOne = (current + 1) === length;
+        if (!isLastOne) {
+            if (this.state.currentQuestion < this.state.questions.length - 1) {
+                this.setState({
+                    currentQuestion: this.state.currentQuestion + 1
+                });
+            } else if (this.state.currentQuestion === this.state.questions.length - 1) {
+                this.setState({
+                    currentQuestion: this.state.questions.length
+                });
+            }
+
+            const data = {
+                length: this.state.questions.length,
+                current: this.state.currentQuestion + 1,
+                color: '#26C485', 
+            };
+
+            this.props.sendProgress(data);
+        } else {
+            if (this.state.currentQuestion < this.state.questions.length - 1) {
+                this.setState({
+                    currentQuestion: this.state.currentQuestion + 1
+                });
+            } else if (this.state.currentQuestion === this.state.questions.length - 1) {
+                this.setState({
+                    currentQuestion: this.state.questions.length
+                });
+            }
+
+            const data = {
+                length: this.state.questions.length,
+                current: this.state.currentQuestion + 1,
+                color: '#26C485', 
+            };
+
+            this.props.sendProgress(data);
+            this.props.sendSurvey(this.state.answers);
         }
-
-        const data = {
-            length: this.state.questions.length,
-            current: this.state.currentQuestion + 1,
-            color: '#26C485', 
-        };
-
-        this.props.sendProgress(data);
     }
 
     // Decrement the current question by 1
@@ -110,7 +134,7 @@ class Wrapper extends React.Component {
 
         const data = {
             length: this.state.questions.length,
-            current: this.state.currentQuestion,
+            current: this.state.currentQuestion - 1,
             color: '#26C485'
         };
 
@@ -119,7 +143,13 @@ class Wrapper extends React.Component {
 
     // Add the answer of the current question to the Answers Array.
     addAnswer = (answer) => {
+        
 
+        if (this.state.answers.length === 0) {
+            this.state.answers.push(answer);
+        } else {
+            this.state.answers[this.state.currentQuestion] = answer;
+        }
     }
 
 
@@ -132,9 +162,9 @@ class Wrapper extends React.Component {
                 if (!(current === null) && !(current === length)) {
                     switch (question.type) {
                         case "react":
-                            return <Reacts question={question.question} id={question.id} index={question.index} callNextQuestion={this.nextQuestion} callPreviousQuestion={this.previousQuestion} result={this.addResponse}/>;
+                            return <Reacts question={question.question} id={question.id} index={question.index} callNextQuestion={this.nextQuestion} callPreviousQuestion={this.previousQuestion} lastQuestion={isLastOne} addAnswer={this.addAnswer}/>;
                         case "choose":
-                            return <Choose question={question.question} id={question.id} index={question.index}  choices={question.choices} callNextQuestion={this.nextQuestion} callPreviousQuestion={this.previousQuestion} lastQuestion={isLastOne}/>;
+                            return <Choose question={question.question} id={question.id} index={question.index}  choices={question.choices} callNextQuestion={this.nextQuestion} callPreviousQuestion={this.previousQuestion} lastQuestion={isLastOne} addAnswer={this.addAnswer}/>;
                         default:
                             return (
                                 <div className="loadingContainer">
@@ -222,12 +252,16 @@ export default class Sondage extends React.Component {
         }
     }
 
+    handleSurvey = (answers) => {
+        console.log(answers);
+    }
+
     render() {
         return(
             <div className='SurveyWrapper'>
                 <div className="SurveyContainer">
                     <ProgressBar current={this.state.current} length={this.state.length} color={this.state.color}/>
-                    <Wrapper sendProgress={this.loadProgress}/>
+                    <Wrapper sendProgress={this.loadProgress} sendSurvey={this.handleSurvey}/>
                 </div>
             </div>
         )

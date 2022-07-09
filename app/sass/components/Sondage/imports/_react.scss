@@ -54,7 +54,8 @@
             border-radius: 15px;
             background-color: $C4;
             user-select: none;
-            transition: all 0.1s ease;
+            transition: all 0.5s ease;
+            z-index: 1;
             svg {
                 color: rgba($C1, 0.2);
                 user-select: none;
@@ -88,13 +89,70 @@
         }
         .Selected:not(svg) {
             background-color: $C3;
-            box-shadow: 25px 0px 100px rgba($C3, 0.5);
+            box-shadow: 25px 0px 100px rgba($C1, 0.5);
             cursor: pointer;
+            z-index: 2;
             svg {
                 color: $C4;
             }
             &:hover {
                 background-color: rgba($C3, 0.75);
+            }
+        }
+        .Selected.BigPositive {
+            $color: rgba($C2, 0.6);
+            background-color: $color;
+            box-shadow: 25px 0px 100px rgba($C2, 0.5);
+            svg {
+                color: $C4;
+            }
+            &:hover {
+                background-color: rgba($color, 0.7);
+            }
+        }
+        .Selected.MediumPositive {
+            $color: rgba($C2, 0.4);
+            background-color: $color;
+            box-shadow: 25px 0px 100px rgba($C2, 0.35);
+            svg {
+                color: $C4;
+            }
+            &:hover {
+                background-color: rgba($color, 0.5);
+            }
+        }
+        .Selected.SmallNeutral {
+            $color: rgba($C2, 0.35);
+            filter: saturate(0);
+            background-color: $color;
+            box-shadow: 25px 0px 100px rgba($C1, 0.25);
+            svg {
+                color: rgba($C4, 1);
+            }
+            &:hover {
+                background-color: rgba($color, 0.6);
+            }
+        }
+        .Selected.MediumNegative {
+            $color: rgba($C5, 0.4);
+            background-color: $color;
+            box-shadow: 25px 0px 100px rgba($C5, 0.35);
+            svg {
+                color: $C4;
+            }
+            &:hover {
+                background-color: rgba($color, 0.5);
+            }
+        }
+        .Selected.BigNegative {
+            $color: rgba($C5, 0.6);
+            background-color: $color;
+            box-shadow: 25px 0px 100px rgba($C5, 0.5);
+            svg {
+                color: $C4;
+            }
+            &:hover {
+                background-color: rgba($color, 0.7);
             }
         }
     }

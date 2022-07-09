@@ -930,7 +930,8 @@
   border-radius: 15px;
   background-color: #F2F2F2;
   user-select: none;
-  transition: all 0.1s ease;
+  transition: all 0.5s ease;
+  z-index: 1;
 }
 .Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Answer svg {
   color: rgba(13, 19, 33, 0.2);
@@ -964,14 +965,66 @@
 }
 .Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected:not(svg) {
   background-color: #06BEE1;
-  box-shadow: 25px 0px 100px rgba(6, 190, 225, 0.5);
+  box-shadow: 25px 0px 100px rgba(13, 19, 33, 0.5);
   cursor: pointer;
+  z-index: 2;
 }
 .Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected:not(svg) svg {
   color: #F2F2F2;
 }
 .Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected:not(svg):hover {
   background-color: rgba(6, 190, 225, 0.75);
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.BigPositive {
+  background-color: rgba(38, 196, 133, 0.6);
+  box-shadow: 25px 0px 100px rgba(38, 196, 133, 0.5);
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.BigPositive svg {
+  color: #F2F2F2;
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.BigPositive:hover {
+  background-color: rgba(38, 196, 133, 0.7);
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.MediumPositive {
+  background-color: rgba(38, 196, 133, 0.4);
+  box-shadow: 25px 0px 100px rgba(38, 196, 133, 0.35);
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.MediumPositive svg {
+  color: #F2F2F2;
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.MediumPositive:hover {
+  background-color: rgba(38, 196, 133, 0.5);
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.SmallNeutral {
+  filter: saturate(0);
+  background-color: rgba(38, 196, 133, 0.35);
+  box-shadow: 25px 0px 100px rgba(13, 19, 33, 0.25);
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.SmallNeutral svg {
+  color: #f2f2f2;
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.SmallNeutral:hover {
+  background-color: rgba(38, 196, 133, 0.6);
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.MediumNegative {
+  background-color: rgba(230, 57, 70, 0.4);
+  box-shadow: 25px 0px 100px rgba(230, 57, 70, 0.35);
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.MediumNegative svg {
+  color: #F2F2F2;
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.MediumNegative:hover {
+  background-color: rgba(230, 57, 70, 0.5);
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.BigNegative {
+  background-color: rgba(230, 57, 70, 0.6);
+  box-shadow: 25px 0px 100px rgba(230, 57, 70, 0.5);
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.BigNegative svg {
+  color: #F2F2F2;
+}
+.Survey .SurveyWrapper .SurveyContainer .container .React .Answers .Selected.BigNegative:hover {
+  background-color: rgba(230, 57, 70, 0.7);
 }
 .Survey .SurveyWrapper .SurveyContainer .container .React .Buttons {
   width: 100%;
@@ -1067,13 +1120,19 @@
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.1s ease;
+  z-index: 1;
 }
 .Survey .SurveyWrapper .SurveyContainer .container .Choose .Answers .Answer:not(.Selected):hover {
   background-color: rgba(13, 19, 33, 0.1);
-  box-shadow: 25px 0px 100px rgba(6, 190, 225, 0.25);
 }
 .Survey .SurveyWrapper .SurveyContainer .container .Choose .Answers .Selected {
   background-color: #06bee1;
+  color: #F2F2F2;
+  box-shadow: 25px 0px 100px rgba(6, 190, 225, 0.5);
+  z-index: 2;
+}
+.Survey .SurveyWrapper .SurveyContainer .container .Choose .Answers .Selected:hover {
+  background-color: rgba(6, 190, 225, 0.75);
   color: #F2F2F2;
 }
 .Survey .SurveyWrapper .SurveyContainer .container .Choose .Buttons {
@@ -1827,6 +1886,10 @@
 .Toastify__toast-theme--light.Toastify__toast--warning {
   background-color: #FF7900 !important;
   color: #F2F2F2 !important;
+}
+
+.Toastify__toast-theme--light.Toastify__toast--success {
+  background-color: #26C485 !important;
 }
 
 /*# sourceMappingURL=index.css.map */

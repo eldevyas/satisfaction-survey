@@ -13,7 +13,7 @@ function pushSuccess(message) {
         draggable: true,
         progress: undefined,
         icon: CheckCircleIcon,
-        toastId: 'Success'
+        // toastId: 'Success'
     });
 }
 

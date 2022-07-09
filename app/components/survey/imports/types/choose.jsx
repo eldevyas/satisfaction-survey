@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 import React from 'react';
-import { pushSucess, pushFailure, pushWarning } from './../../../../functions/alert';
+import { pushSuccess, pushFailure, pushWarning } from './../../../../functions/alert';
 // Toast support
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,29 +12,50 @@ import WarningIcon from '@mui/icons-material/Warning';
 export default class Reacts extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             question: this.props.question,
-            currentAnswer: this.props.current,
-            choices: this.props.choices,
+            choices: this.props.choices
         };
+
+        this.responseBack = {
+            id: this.props.id,
+            answer: null
+        }
+
+        this.currentAnswer = null
     }
 
     handleClick = (event) => {
-        event.preventDefault();
 
-        const divs = document.querySelectorAll('.Choose .Answers .Answer');
-
-        // Remove selected class from all divs
-        divs.forEach(div => {
-            if (div.classList.contains('Selected') && /* is not the clicked div */ div !== event.target) {
-                div.classList.remove('Selected');
-            }
-        });
-        
-        // Add Selected class to clicked div
+        // Get clicked target from event
         const clicked = event.target;
-        clicked.classList.toggle('Selected');
+
+        // Remove selected class from all other divs
+        const answers = document.querySelectorAll('.Choose .Answers .Answer');
+        
+        answers.forEach(answer => {
+            if (answer.classList.contains('Selected') && answer !== clicked) {
+                answer.classList.remove('Selected');
+            } 
+        });
+
+        // Add selected class to clicked div
+        if (!clicked.classList.contains('Selected')) {
+            clicked.classList.add('Selected');
+
+            // Get answer from clicked div
+            const answer = document.querySelector('.Choose .Answers .Answer.Selected').getAttribute('answer');
+
+            // Set current answer to answer
+            this.currentAnswer = answer;
+        } else {
+            clicked.classList.remove('Selected');
+
+            // Set current answer to null
+            this.setState({
+                currentAnswer: null,
+            });
+        }
     }
 
     handleNext = () => {
@@ -49,22 +70,23 @@ export default class Reacts extends React.Component {
         });
 
         if (selected) {
-            // Remove selected class from all divs
-            divs.forEach(div => {
-                if (div.classList.contains('Selected')) {
-                    div.classList.remove('Selected');
+            if (this.currentAnswer !== null && this.currentAnswer !== undefined && this.currentAnswer !== 0) {
+
+                this.responseBack = {
+                        id: this.props.id,
+                        answer: this.currentAnswer
                 }
-            });
-
-            // Remove all alerts
-            toast.dismiss();
-
-            this.props.callNextQuestion();
+                    
+                this.props.addAnswer(this.responseBack);
+                this.props.callNextQuestion();
+            } else {
+                pushFailure('Aucune réponse n\'a été sélectionnée.');
+            }
         } else {
             pushWarning('Veuillez sélectionner une réponse.');
         }
     }
-    
+
     handlePrevious = () => {
         this.props.callPreviousQuestion();
     }
@@ -75,7 +97,7 @@ export default class Reacts extends React.Component {
             <div className="Choose">
     
                 <div className="Question">
-                    <p className="Question-index">Question 2</p>
+                    <p className="Question-index">Question {this.props.index}</p>
     
                     <p className="Question-description">Sélectionnez l'une des affirmations qui répondent correctement à la question</p>
     
@@ -89,7 +111,7 @@ export default class Reacts extends React.Component {
                     {
                         this.props.choices.map((answer, index) => {
                             return (
-                                <div className="Answer" key={index} onClick={this.handleClick}>
+                                <div className="Answer" key={index} onClick={this.handleClick} answer={answer.text}>
                                     {answer.text}
                                 </div>
                             )

@@ -1,3 +1,4 @@
+@import "./../../global/variables";
 // Apple
 $AppleGreen: #00CA4E;
 $AppleYellow: #FFBD44;
@@ -87,4 +88,8 @@ $nfMargin: 20px;
 .Toastify__toast-theme--light.Toastify__toast--warning {
     background-color: $WarningColor !important;
     color: $C4 !important;
+}
+
+.Toastify__toast-theme--light.Toastify__toast--success {
+    background-color: $C2 !important;
 }
