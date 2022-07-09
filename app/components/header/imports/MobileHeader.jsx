@@ -20,7 +20,7 @@ const DefaultHomeHeader = () => {
     return(
         <div className="MobileHeader">
             <div className="Logo">
-                <Image className="Logo" src={"/../public/logo.png"} alt="logo" width={110} height={50} onClick={function() { Router.push('/') }}/>
+                <Image className="Logo" src={"/image/logo.png"} alt="logo" width={110} height={50} onClick={function() { Router.push('/') }}/>
             </div>
 
             <div className="MenuIcon">
@@ -100,7 +100,7 @@ const DefaultLoginHeader = () => {
     return(
         <div className="MobileHeader">
             <div className="Logo">
-                <Image className="Logo" src={"/../public/logo.png"} alt="logo" width={110} height={50} onClick={function() { Router.push('/') }}/>
+                <Image className="Logo" src={"/image/logo.png"} alt="logo" width={110} height={50} onClick={function() { Router.push('/') }}/>
             </div>
 
             <div className="MenuIcon">

@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Link from 'next/link';
 
 const image = {
-    url: '/../public/image/Image.png',
+    url: '/image/Image.png',
     alt: 'Stagiaire remplissant des champs de formulaire.',
     width: 649.78,
     height: 622.48

@@ -9,7 +9,7 @@ const DefaultHomeHeader = () => {
             <div className="Header">
                 <div className="HeaderContentLeft">
 
-                <Image className="Logo" src={"/../public/logo.png"} alt="logo" width={110} height={50} onClick={function() { Router.push('/') }}/>
+                <Image className="Logo" src={"/image/logo.png"} alt="logo" width={110} height={50} onClick={function() { Router.push('/') }}/>
 
                 <div className="NavigationLinks">
                     <div>
@@ -72,7 +72,7 @@ const DefaultLoginHeader = () => {
         <>
             <div className="Header">
                 <div className="HeaderContentLeft">
-                    <Image className="Logo" src={"/../public/logo.png"} alt="logo" width={110 * 0.75} height={50 * 0.75} onClick={function() { Router.push('/') }}/>
+                    <Image className="Logo" src={"/image/logo.png"} alt="logo" width={110 * 0.75} height={50 * 0.75} onClick={function() { Router.push('/') }}/>
                 </div>
 
                 <div className="HeaderContentRight">
