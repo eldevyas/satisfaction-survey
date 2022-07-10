@@ -38,7 +38,7 @@ class ResponsiveHeader extends React.Component {
             
         return (
             <div>
-            {isDesktop ? <DesktopHeader type={type}/> : <MobileHeader type={type}/>};
+            {isDesktop ? <DesktopHeader type={type}/> : <MobileHeader type={type}/>}
             </div>
         );
     }

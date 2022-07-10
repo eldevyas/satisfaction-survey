@@ -10,7 +10,6 @@ import $ from 'jquery';
 
 export default function MyApp({ Component, pageProps }) {
 
-    const notify = () => toast("Wow so easy !");
 
     return (
         <>
