@@ -1,16 +1,15 @@
 <?php
+USE Src\System\DatabaseConnector;
 
-use Src\System\DatabaseConnector;
-
-class SurveyTable extends DatabaseConnector {
+class AuthUser extends DatabaseConnector {
     public function __construct() {
         parent::__construct();
     }
-
+    
     /**
      * @return string
      */
     public function getTableName() {
-        return 'survey';
+        return 'user';
     }
 }
