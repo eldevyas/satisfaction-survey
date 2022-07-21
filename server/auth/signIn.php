@@ -23,7 +23,7 @@ class SignIn {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($result) {
-            $User = new User($result['username'], $result['password'], $result['email'], $result['first_name'], $result['last_name']);
+            $User = new User($result['username'], $result['password'], $result['email'], $result['first_name'], $result['last_name'], $result['avatar'], $result['role']);
         } else {
         } // end if/else
     } // end checkUser
