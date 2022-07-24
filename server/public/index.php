@@ -16,6 +16,9 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header("Access-Control-Allow-Headers: X-Requested-With");
 header('Access-Control-Allow-Credentials: true');    
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->safeLoad();
+$secret = $_ENV['JWT_SECRET'];
 // Intialize Slim Framework with the following parameters
 $config['displayErrorDetails'] = true; // Set to true to display error details - Suitable for development only
 $config['addContentLengthHeader'] = false; // Allow the web server to send the content-length header
@@ -72,8 +75,8 @@ $container['db'] = function ($c) {
 // Just testing the routes
 $app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
     $name = $args['name'];
-    $secret = getenv('JWT_SECRET', true) ?: getenv('JWT_SECRET');
 
+    $secret = $_ENV['JWT_SECRET'];
     $response->getBody()->write("Hello, $name. <br/> Environement's JWT Secret Key is: " . $secret);
     return $response;
 });
