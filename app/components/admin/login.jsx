@@ -1,29 +1,59 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Button from '@mui/material/Button';
-
 // Icons
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LockIcon from '@mui/icons-material/Lock';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import VisibilityOn from '@mui/icons-material/Visibility';
 
-import { useSession, signIn, signOut } from "next-auth/react"
+import { pushSuccess, pushFailure, pushWarning } from './../../services/alert';
+import { login } from "./../../services/auth";
 
 
 export default class LoginComponent extends React.Component {
     constructor(props) {
         super(props);
+        this.emailRef = React.createRef(null);
+        this.passwordRef = React.createRef(null);
+        this.rememberMeRef = React.createRef(null);
+
         this.state = {
-            username: '',
-            password: '',
             showPassword: false
         };
+
+        this.credentials = {
+            username: '',
+            password: '',
+            rememberMe: false
+        }
 
         // Hide & show password icon
     }
 
     handleClickShowPassword = () => {
         this.setState({ showPassword: !this.state.showPassword });
+    }
+
+    handleLogin = () => {
+        const username = this.emailRef.current.value;
+        const password = this.passwordRef.current.value;
+        const isRememberMe = this.rememberMeRef.current.checked;
+
+        if (username && password) {
+            this.credentials.email = username;
+            this.credentials.password = password;
+            this.credentials.rememberMe = isRememberMe;
+
+            login(this.credentials);
+        } else {
+            if (!username) {
+                pushWarning("Veuillez entrer votre nom d'utilisateur.");
+                return;
+            } else if (!password) {
+                pushWarning("Veuillez entrer votre mot de passe.");
+                return;
+            }
+        }
     }
     
     render() {
@@ -34,23 +64,22 @@ export default class LoginComponent extends React.Component {
                         <div className="Input-icon">
                             <AccountCircleIcon />
                         </div>
-                        <input type="username" className="form-control" placeholder="Nom d'utilisateur" required></input>
+                        <input ref={this.emailRef} type="username" className="form-control" placeholder="Nom d'utilisateur" required></input>
                     </div>
                     <div className="Input Password">
                         <div className="Input-icon">
                             <LockIcon />
                         </div>
-                        <input type={this.state.showPassword ? 'text' : 'password'} className="form-control" placeholder="Mot de passe" required></input>
+                        <input ref={this.passwordRef} type={this.state.showPassword ? 'text' : 'password'} className="form-control" placeholder="Mot de passe" required></input>
                         <div className="Visibility" onClick={this.handleClickShowPassword}>
                             {this.state.showPassword ? <VisibilityOff title='Cacher'/> : <VisibilityOn title='Montrer'/>}
                         </div>
                     </div>
-
                 </form>
 
                 <div className="RememberMe">
                     <label className="cont">
-                        <input type="checkbox"/>
+                        <input type="checkbox" ref={this.rememberMeRef}/>
                         <span></span>
                     </label>
 
@@ -60,6 +89,7 @@ export default class LoginComponent extends React.Component {
                 <Button
                     variant="primary"
                     className= "btnPrimary"
+                    onClick={this.handleLogin}
                 >
                     Se Connecter
                 </Button>

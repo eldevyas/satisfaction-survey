@@ -11,20 +11,22 @@ import $ from 'jquery';
 export default function MyApp({ Component, pageProps: { session, ...pageProps }}) {
     return (
         <>
-            <Component {...pageProps} />
-            <ToastContainer 
-                position="top-left"
-                autoClose={5000}
-                hideProgressBar={true}
-                newestOnTop={false}
-                closeOnClick={true}
-                rtl={false}
-                pauseOnFocusLoss={false}
-                draggable={true}
-                pauseOnHover
-                transition= {Flip}
-                limit={3}
-            />
+            <>
+                <Component {...pageProps} />
+                <ToastContainer 
+                    position="top-left"
+                    autoClose={5000}
+                    hideProgressBar={true}
+                    newestOnTop={false}
+                    closeOnClick={true}
+                    rtl={false}
+                    pauseOnFocusLoss={false}
+                    draggable={true}
+                    pauseOnHover
+                    transition= {Flip}
+                    limit={3}
+                />
+            </>
         </>
     );
 }

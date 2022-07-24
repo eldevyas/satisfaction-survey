@@ -1400,6 +1400,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
 }
 .Login .LoginContainer .wrapper .Form-group .Input:not(:first-child) {
   margin-top: 15px;
@@ -1417,6 +1418,7 @@
   padding-left: 65px;
   padding-right: 65px;
   border-radius: 5px;
+  transition: all 0.3s ease;
 }
 .Login .LoginContainer .wrapper .Form-group .Input input::placeholder {
   color: rgba(13, 19, 33, 0.25);
@@ -1458,6 +1460,10 @@
 .Login .LoginContainer .wrapper .Form-group .Input .Visibility svg:hover {
   color: rgba(13, 19, 33, 0.35);
   cursor: pointer;
+}
+.Login .LoginContainer .wrapper .Form-group .Input input:focus {
+  outline: none;
+  background-color: rgba(6, 190, 225, 0.1);
 }
 .Login .LoginContainer .wrapper .RememberMe {
   position: relative;

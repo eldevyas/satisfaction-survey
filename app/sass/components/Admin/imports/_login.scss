@@ -59,6 +59,7 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        background-color: #fff;
                         &:not(:first-child) {
                             margin-top: 15px;
                         }
@@ -75,6 +76,7 @@
                             padding-left: 65px;
                             padding-right: 65px;
                             border-radius: 5px;
+                            transition: all 0.3s ease;
                             &::placeholder {
                                 color: rgba($C1, 0.25);
                             }
@@ -116,6 +118,10 @@
                                     cursor: pointer;
                                 }
                             }
+                        }
+                        input:focus {
+                            outline: none;
+                            background-color: rgba($C3, 0.1);
                         }
                     }
                 }

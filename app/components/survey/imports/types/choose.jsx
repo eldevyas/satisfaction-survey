@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 import React from 'react';
-import { pushSuccess, pushFailure, pushWarning } from './../../../../functions/alert';
+import { pushSuccess, pushFailure, pushWarning } from './../../../../services/alert';
 // Toast support
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

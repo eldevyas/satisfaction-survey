@@ -9,7 +9,7 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 //Axios
 import axios from 'axios';
 
-import { pushFailure , pushSuccess, pushWarning} from './../../functions/alert';
+import { pushFailure , pushSuccess, pushWarning} from './../../services/alert';
 
 
 class Wrapper extends React.Component {

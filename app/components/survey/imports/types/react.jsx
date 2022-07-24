@@ -8,7 +8,7 @@ import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfi
 import React from 'react';
 
 // Alerts
-import { pushSuccess, pushFailure, pushWarning } from './../../../../functions/alert';
+import { pushSuccess, pushFailure, pushWarning } from './../../../../services/alert';
 
 
 export default class Reacts extends React.Component {
