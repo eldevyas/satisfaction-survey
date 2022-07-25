@@ -27,6 +27,7 @@ export default class LoginComponent extends React.Component {
             rememberMe: false
         }
 
+        
         // Hide & show password icon
     }
 
@@ -46,7 +47,10 @@ export default class LoginComponent extends React.Component {
 
             login(this.credentials);
         } else {
-            if (!username) {
+            if (!username && !password) {
+                pushWarning("Veuillez entrer votre nom d'utilisateur et votre mot de passe.");
+            }
+            else if (!username) {
                 pushWarning("Veuillez entrer votre nom d'utilisateur.");
                 return;
             } else if (!password) {

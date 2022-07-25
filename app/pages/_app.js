@@ -7,11 +7,12 @@ import '../styles/404.css';
 import { ToastContainer, toast } from 'react-toastify';
 import { Slide, Zoom, Flip, Bounce } from 'react-toastify';
 import $ from 'jquery';
+import { AuthContextProvider } from '../contexts/authContext';
 
 export default function MyApp({ Component, pageProps: { session, ...pageProps }}) {
     return (
         <>
-            <>
+            <AuthContextProvider>
                 <Component {...pageProps} />
                 <ToastContainer 
                     position="top-left"
@@ -26,7 +27,7 @@ export default function MyApp({ Component, pageProps: { session, ...pageProps }}
                     transition= {Flip}
                     limit={3}
                 />
-            </>
+            </AuthContextProvider>
         </>
     );
 }

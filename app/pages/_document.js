@@ -22,7 +22,7 @@ export default function Document() {
         setLoading(false);
     };
 
-
+    
     return (
         <Html lang="id">
             <Head>

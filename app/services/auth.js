@@ -1,31 +1,49 @@
+import React from 'react';
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const SERVER_URL = "http://trycod.ntic";
 import { pushSuccess, pushFailure, pushWarning } from "./alert";
+import { useRouter } from 'next/router';
 
-const login = async (credentials) => {
-    const LOGIN_ENDPOINT = `${SERVER_URL}/users/signin`;
-    console.log(LOGIN_ENDPOINT);
+async function login(credentials){
+    const LOGIN_ENDPOINT = `${SERVER_URL}/signin`;
+    
 
     let data = JSON.stringify({
         password: credentials.password,
         username: credentials.email
     })
 
-    axios.post(LOGIN_ENDPOINT, data, {
+    return axios.post(LOGIN_ENDPOINT, data, {
         headers: {
-            Accept: 'application/json',
+            // Accept: 'application/json',
             'Content-Type': 'application/json'
         }
     })
     .then((response) => { 
-        console.log(response.data);
         if (response.data) {
-            pushSuccess("Vous êtes connecté.");
+            if (response.data.token) {
+                localStorage.setItem('token', response.data.token);
+                pushSuccess("Vous êtes connecté.");
+            } else {
+                pushFailure("Votre nom d'utilisateur ou votre mot de passe est incorrect.");
+            }
         } else {
             pushFailure("Votre nom d'utilisateur ou votre mot de passe est incorrect.");
+            return false;
         }
     })
-    .catch((error) => { console.log(error) })
+    .catch((error) => { 
+        console.log(error);
+        pushFailure(error.message);
+        return false;
+     })
 };
+
+
+const logout = () => {
+    localStorage.removeItem('token');
+    window.location.reload();
+}
 
 export { login };

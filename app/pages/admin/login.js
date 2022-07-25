@@ -2,8 +2,25 @@ import Image from 'next/image';
 import Head from 'next/head';
 import LoginComponent from '../../components/admin/login'; 
 import Header from '../../components/header/header';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+
 
 export default function Login() {
+    const router = useRouter();
+
+
+    useEffect(() => {
+        if (localStorage) {
+            if (localStorage.getItem('token')) {
+                router.push('/admin/index');
+            }
+        } else {
+           console.log('No token found'); 
+        }
+    }, []);
+
+    
     return(
         <div className="Login">
             <Head>

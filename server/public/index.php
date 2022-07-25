@@ -2,10 +2,11 @@
 
 
 
-
-use \Psr\Http\Message\ServerRequestInterface as Request;
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+use Tuupola\Middleware\JwtAuthentication as JwtAuthentication;
 use \Psr\Http\Message\ResponseInterface as Response;
-use \Tuupola\Middleware\JwtAuthentication as JwtAuthentication;
+use \Psr\Http\Message\ServerRequestInterface as Request;
 
 include("../classes/user.php");
 
@@ -18,7 +19,7 @@ header('Access-Control-Allow-Credentials: true');
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
-$secret = $_ENV['JWT_SECRET'];
+// $secret = $_ENV['JWT_SECRET'];
 // Intialize Slim Framework with the following parameters
 $config['displayErrorDetails'] = true; // Set to true to display error details - Suitable for development only
 $config['addContentLengthHeader'] = false; // Allow the web server to send the content-length header
@@ -43,11 +44,18 @@ $app->add(function ($req, $res, $next) {
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
 });
 
-// $app->add(new \Tuupola\Middleware\JwtAuthentication([
-//     "secure" => true,
-//     "relaxed" => ["localhost:3000", "trycod.ntic"],
-//     "secret" => getenv("SECRET_KEY")
-// ]));
+$payload = [
+    "sub" => "user@example.com"
+];
+
+
+$app->add(new JwtAuthentication([
+    "path" => "/api",
+    "passthrough" => "/v0/displayUsers",
+    "secure" => false,
+    "relaxed" => ["localhost:3000", "127.0.0.1:3000"],
+    "secret" => $_ENV['JWT_SECRET']
+]));
 
 
 // Get the container of the application
@@ -73,17 +81,16 @@ $container['db'] = function ($c) {
 
 
 // Just testing the routes
-$app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
+$app->get('/hello/{name}', function (Request $request, Response $response, array $args) {    
     $name = $args['name'];
-
     $secret = $_ENV['JWT_SECRET'];
-    $response->getBody()->write("Hello, $name. <br/> Environement's JWT Secret Key is: " . $secret);
+    $response->getBody()->write("<p style= 'color: #555; font-family: poppins;'> Hello, " . $name. ".<br/> <strong style ='margin-right: 10px'> Environement's JWT Secret Key is: </strong>" . $secret . "</p>");
     return $response;
 });
 
 
 // Display All the users in the database
-$app->get('/users/display', function (Request $request, Response $response, array $args) {
+$app->get('/api/v0/displayUsers', function (Request $request, Response $response, array $args) {
     $user = new User($this->db);
 
     $response->getBody()->write(json_encode($user->DisplayUsers()));
@@ -92,18 +99,34 @@ $app->get('/users/display', function (Request $request, Response $response, arra
 });
 
 // Sign in the user with the given credentials in the POST request
-$app->post('/users/signin', function (Request $request, Response $response) {
+$app->post('/signin', function (Request $request, Response $response) {
     $user = new User($this->db);
 
     $body = $request->getBody();
     $data = json_decode($body, true);
 
-    $response->getBody()->write(json_encode($user->SignIn($data['username'], $data['password']), JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
+    if ($user->SignIn($data['username'], $data['password']) !== false) {
+        $token = array(
+            "iss" => "http://example.org",
+            "aud" => "http://example.com",
+            "iat" => 1356999524,
+            "nbf" => 1357000000,
+            "sub" => $data['username'],
+            "scope" => ["read", "write", "delete"]
+        );
+
+        $jwt = JWT::encode($token, $_ENV['JWT_SECRET']);
+
+        // Save the token
+        $response->getBody()->write(json_encode(array("token" => $jwt)));
+    } else {
+        $response->getBody()->write("Invalid Credentials");
+    }
     
     return $response
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
-            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+            ->withHeader('Access-Control-Allow-Methods', 'POST');
 });
 
 

@@ -45,5 +45,4 @@ class User {
             return false;
         }
     }
-
 }
