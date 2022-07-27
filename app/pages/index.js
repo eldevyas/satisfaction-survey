@@ -5,9 +5,10 @@ import { useContext } from 'react';
 import AuthContext from '../contexts/authContext';
 
 export default function Home() {
-    const Value  = useContext(AuthContext);
-    console.log(Value);
+    const Context = useContext(AuthContext);
 
+    console.log(Context);
+    
     return (
         <div className="Container">
             <Head>

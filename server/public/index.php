@@ -106,21 +106,30 @@ $app->post('/signin', function (Request $request, Response $response) {
     $data = json_decode($body, true);
 
     if ($user->SignIn($data['username'], $data['password']) !== false) {
-        $token = array(
-            "iss" => "http://example.org",
-            "aud" => "http://example.com",
-            "iat" => 1356999524,
-            "nbf" => 1357000000,
-            "sub" => $data['username'],
-            "scope" => ["read", "write", "delete"]
+        $issuedAt = time();
+        $expirationTime = $issuedAt + 3600;
+
+        $userData = $user->SignIn($data['username'], $data['password']);
+
+        $payload = array(
+            'username' => $userData['username'],
+            'userID' => $userData['id'],
+            'userData' => $userData,
+            'iat' => $issuedAt,
+            'exp' => $expirationTime
         );
 
-        $jwt = JWT::encode($token, $_ENV['JWT_SECRET']);
-
-        // Save the token
-        $response->getBody()->write(json_encode(array("token" => $jwt)));
+        $jwt = JWT::encode($payload, $_ENV['JWT_SECRET']);
+        $response->getBody()->write(json_encode(array(
+            "status" => "success",
+            "jwt" => $jwt,
+            "user" => $userData
+        ), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
     } else {
-        $response->getBody()->write("Invalid Credentials");
+        $response->getBody()->write(json_encode(array(
+            "status" => "error",
+            "message" => "Nom d'utilisateur ou mot de passe incorrect."
+        ), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
     }
     
     return $response

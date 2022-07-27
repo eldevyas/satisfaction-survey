@@ -20,21 +20,42 @@
     }
 }
 
+$padding: 9.5px 25px;
+$font-weight: bold;
+$font-size: 0.8rem;
+$border-radius: 7.5px;
+// 
+// 
 @mixin PrimaryButton($color) {
     background-color: rgba($color, 1);
     color: rgba($C4, 0.8);
-    font-weight: bold;
-    font-size: 14px;
+    font-weight: $font-weight;
+    font-size: $font-size;
     box-shadow: 0px 20px 50px rgba($color, 0.25);
-    padding: 7px 14px;
+    padding: $padding;
     font-family: Poppins, sans-serif;
+    border-radius: $border-radius;
 }
 
 @mixin TextButton($color) {
     color: rgba($color, 1);
     margin-right: 15px;
-    font-weight: bold;
-    font-size: 14px;
-    padding: 7px 14px;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    padding: $padding;
     font-family: Poppins, sans-serif;
+    border-radius: $border-radius;
+}
+
+@mixin SecondaryButton($color) {
+    color: rgba($color, 1);
+    margin-right: 15px;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    padding: $padding;
+    font-family: Poppins, sans-serif;
+    border-radius: $border-radius;
+    -webkit-box-shadow: inset 0px 0px 0px 1.5px $color;
+    -moz-box-shadow: inset 0px 0px 0px 1.5px $color;
+    box-shadow: inset 0px 0px 0px 1.5px $color;
 }

@@ -3,24 +3,21 @@ import Head from 'next/head';
 import LoginComponent from '../../components/admin/login'; 
 import Header from '../../components/header/header';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import AuthContext from '../../contexts/authContext';
 
 
 export default function Login() {
     const router = useRouter();
 
+    const Context = useContext(AuthContext);
 
     useEffect(() => {
-        if (localStorage) {
-            if (localStorage.getItem('token')) {
-                router.push('/admin/index');
-            }
-        } else {
-           console.log('No token found'); 
+        if (Context.user !== undefined && Context.user !== null) {
+            router.push('/admin');
         }
-    }, []);
+    }, [Context.user]);
 
-    
     return(
         <div className="Login">
             <Head>

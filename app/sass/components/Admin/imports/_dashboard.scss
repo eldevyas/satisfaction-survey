@@ -1,0 +1,425 @@
+.DashboardPage {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background: linear-gradient(107.56deg, #FAFAFA 0%, #EBF5F7 49.48%, #F2F2F2 100%);
+    overflow: hidden;
+    position: relative;
+    .Background {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        pointer-events: none;
+        overflow: hidden;
+        .BackgroundImage {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .Dashboard {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        .Dashboard-Container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .Sidebar {
+                width: 250px;
+                min-width: 20%;
+                height: 100%;
+                position: relative;
+                background: white;
+                border-radius: 0px 35px 35px 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 1.5rem;
+                .Sidebar-Container {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    .Sidebar-Header {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0px;
+                        margin: 0px;
+                        position: relative;
+                        height: 50px;
+                        span {
+                            cursor: pointer;
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            @keyframes in {
+                                from {
+                                    transform: rotateY(0deg)
+                                }
+                                ;
+                                to {
+                                    transform: rotateY(180deg)
+                                }
+                                ;
+                            }
+                            @keyframes out {
+                                from {
+                                    transform: rotateY(180deg)
+                                }
+                                ;
+                                to {
+                                    transform: rotateY(0deg)
+                                }
+                                ;
+                            }
+                            .Logo {
+                                transition: all 0.3s ease;
+                                animation: out 0.3s ease forwards;
+                                width: 70px;
+                                height: auto;
+                            }
+                            &:hover {
+                                .Logo {
+                                    animation: in 0.3s ease forwards;
+                                    opacity: 0.8;
+                                }
+                            }
+                        }
+                        h1 {
+                            font-size: 1rem;
+                            color: rgba($C1, 0.25);
+                            font-weight: 800;
+                        }
+                    }
+                    .Sidebar-Content {
+                        height: 50%;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: center;
+                        .Nav-item {
+                            margin-bottom: 0.75rem;
+                            width: 100%;
+                            height: 40px;
+                            background-color: rgba($C3, 0.25);
+                            border-radius: 1rem;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            color: $C3;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            padding: 0 1rem;
+                            font-size: 0.8rem;
+                            transition: all 300ms ease;
+                            user-select: none;
+                            font-family: Poppins, sans-serif;
+                            .Nav-icon {
+                                margin-right: 0.5rem;
+                                font-size: 1.5rem;
+                            }
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                        .Selected {
+                            background-color: rgba($C3, 0.25);
+                            color: $C3;
+                            &:hover {
+                                background-color: rgba($C3, 0.35);
+                                color: rgba($C3, 1);
+                            }
+                            &:active {
+                                background-color: rgba($C3, 0.25);
+                            }
+                        }
+                        .Unselected {
+                            background-color: rgba($C3, 0);
+                            color: rgba($C1, 0.25);
+                            &:hover {
+                                background-color: rgba($C1, 0.025);
+                            }
+                            &:active {
+                                background-color: rgba($C1, 0.05);
+                            }
+                        }
+                    }
+                    .Sidebar-Footer {
+                        width: 100%;
+                        height: fit-content;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        .DisconnectBtn {
+                            margin-bottom: 0.75rem;
+                            width: 100%;
+                            height: 40px;
+                            background-image: $GC5;
+                            border-radius: 1rem;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            color: $C4;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            padding: 0 1rem;
+                            font-size: 0.8rem;
+                            transition: all 300ms ease;
+                            user-select: none;
+                            font-family: Poppins, sans-serif;
+                            .Nav-icon {
+                                margin-right: 0.5rem;
+                                font-size: 1.5rem;
+                            }
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+            .DashboardContent {
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                margin: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .Content-Container {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding: 1.5rem 0;
+                    position: relative;
+                    .Content-Header {
+                        width: 100%;
+                        height: 50px;
+                        background-color: transparent;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        .Content-Header-Label {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            justify-content: center;
+                            height: 100%;
+                            width: fit-content;
+                            text-align: left;
+                            .Content-Header-Title {
+                                font-size: 0.9rem;
+                                color: $C3;
+                                font-weight: 800;
+                                font-family: Poppins, sans-serif;
+                                color: $C1;
+                                margin-bottom: 0.2rem;
+                            }
+                            .Content-Header-Subtitle {
+                                font-size: 0.7rem;
+                                color: $C3;
+                                font-weight: 800;
+                                font-family: Poppins, sans-serif;
+                                color: $C3;
+                            }
+                        }
+                        .Content-Header-User {
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: center;
+                            height: 100%;
+                            width: fit-content;
+                            .Content-Header-User-Actions {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: flex-end;
+                                align-items: center;
+                                height: 100%;
+                                width: fit-content;
+                                .Content-Header-User-Action {
+                                    height: 2rem !important;
+                                    width: 2rem !important;
+                                    min-width: 2rem !important;
+                                    max-width: 2rem !important;
+                                    min-height: 2rem !important;
+                                    max-height: 2rem !important;
+                                    padding: 0 !important;
+                                    aspect-ratio: 1/1;
+                                    border-radius: 10px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    // .Mui-active {
+                                    //     border-radius: 5px;
+                                    // }
+                                    .Content-Header-User-Action-Icon {
+                                        font-size: 0.8rem;
+                                        color: $C3;
+                                        padding: 0;
+                                        margin: 0;
+                                    }
+                                    .Content-Header-User-Action-Icon-Notification {
+                                        color: rgba($C3, 0.25);
+                                        position: relative !important;
+                                    }
+                                    .Content-Header-User-Action-Notification-Wrapper {
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        .Content-Header-User-Action-Notification-Indicator {
+                                            background-color: $C3;
+                                            width: 4px;
+                                            height: 4px;
+                                            border-radius: 50%;
+                                            position: relative;
+                                            left: 0.15rem;
+                                            top: -0.2rem;
+                                        }
+                                    }
+                                    .MuiTouchRipple-root {
+                                        width: 2rem !important;
+                                        height: 2rem !important;
+                                        margin: 0;
+                                        padding: 0;
+                                        $color: $C3;
+                                    }
+                                    &:hover {
+                                        cursor: pointer !important;
+                                    }
+                                    &:not(:last-child) {
+                                        margin-right: 1rem;
+                                    }
+                                }
+                            }
+                            .Content-Header-User-Avatar {
+                                width: 50px;
+                                height: 50px;
+                                background: $GC3;
+                                border-radius: 1rem;
+                                margin-left: 1.5rem;
+                                position: relative;
+                                overflow: hidden;
+                                .Content-Header-User-Avatar-Person {
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-size: cover;
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    background-attachment: unset;
+                                }
+                            }
+                        }
+                    }
+                    .Dashboard-Content-Container {
+                        height: 100%;
+                        width: 100%;
+                        margin-top: 1.5rem;
+                        background-color: transparent;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: center;
+                        .Statistiques-Cards {
+                            width: 100%;
+                            height: fit-content;
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            align-items: center;
+                            .Statistiques-Card {
+                                width: calc(25% - 1rem);
+                                height: 135px;
+                                background-color: #fff;
+                                border-radius: 1rem;
+                                box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.1);
+                                padding: 1.25rem 1rem;
+                                color: #fff;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                .Statistiques-Card-Title {
+                                    width: 100%;
+                                    height: fit-content;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    .Statistiques-Card-Title-Icon {
+                                        font-size: 1rem;
+                                        color: inherit;
+                                        margin-right: 0.5rem;
+                                    }
+                                    p {
+                                        font-size: 0.75rem;
+                                        color: inherit;
+                                        font-weight: 500;
+                                    }
+                                }
+                                h1 {
+                                    font-weight: 800;
+                                    color: inherit;
+                                    font-size: 2rem;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    width: 100%;
+                                    height: fit-content;
+                                }
+                            }
+                            .Statistiques-Card.Red {
+                                background: $GC5;
+                            }
+                            .Statistiques-Card.White {
+                                background: $GC4;
+                                color: rgba($C1, 0.5);
+                            }
+                            .Statistiques-Card.Green {
+                                background: $GC2;
+                            }
+                            .Statistiques-Card.Black {
+                                background: $GC1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
