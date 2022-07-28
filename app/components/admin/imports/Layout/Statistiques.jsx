@@ -1,4 +1,5 @@
 // Required Modules for functionality.
+import React from 'react';
 import Image from 'next/image';
 import Router from 'next/router';
 //
@@ -11,6 +12,12 @@ import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import FunctionsIcon from '@mui/icons-material/Functions';
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+//
+// Required Serivces and Functions
+import { pushSuccess } from '/services/alert';
+
 
 
 function Cards() {
@@ -56,12 +63,100 @@ function Cards() {
 }
 
 
+function QuestionReact() {
+    const [Expanded, setExpanded] = React.useState(false);
+
+    const handleExpand = () => {
+        if (Expanded) {
+            setExpanded(false);
+        } else {
+            setExpanded(true);
+        }
+    }
+
+    return (
+        Expanded ? 
+        <>  
+            <div className="Question-Stats React">
+                <div className='Left-Side'>
+                    <div className="Question-Stats-Index">
+                        1
+                    </div>
+
+                    <div className="Question-Stats-Title">
+                        Mes professeurs expliquent les choses d'une manière que je comprends.
+                    </div>
+                </div>
+
+                <div className="Question-Stats-Actions">
+                    <div className="Question-Stats-Actions-Most">
+                        <div className="Question-Stats-Actions-Most-Percentage"></div>
+                        <div className="Question-Stats-Actions-Most-Text">
+                            <InsertEmoticonIcon/>
+                            46%
+                        </div>
+                    </div>
+
+                    <div className="Question-Stats-Actions-Expand" onClick={handleExpand}>
+                        <ExpandMoreIcon/>
+                    </div>
+               </div> 
+            </div>
+        </>
+        : 
+        <> 
+            <div className="Question-Stats React Open">
+                <div className='Left-Side'>
+                    <div className="Question-Stats-Index">
+                        1
+                    </div>
+
+                    <div className="Question-Stats-Title">
+                        Mes professeurs expliquent les choses d'une manière que je comprends.
+                    </div>
+                </div>
+
+                <div className="Question-Stats-Actions">
+                    <div className="Question-Stats-Actions-Most">
+                        <div className="Question-Stats-Actions-Most-Percentage"></div>
+                        <div className="Question-Stats-Actions-Most-Text">
+                            <InsertEmoticonIcon/>
+                            46%
+                        </div>
+                    </div>
+
+                    <div className="Question-Stats-Actions-Expand" onClick={handleExpand}>
+                        <ExpandMoreIcon/>
+                    </div>
+               </div> 
+            </div>
+        </>
+
+
+    );
+}
+
+
+
+function QuestionsStats() {
+    return (
+        <>  
+            <div className="Statistiques-Questions">
+                <QuestionReact/>
+            </div>
+        </>
+    );
+}
+
+
+
 
 export default function Statistiques() {
     return(
         <>
             <div className="Statistiques-Container Dashboard-Content-Container">
                 <Cards/>
+                <QuestionsStats/>
             </div>
         </>
     )

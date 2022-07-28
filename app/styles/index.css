@@ -2080,6 +2080,115 @@
 .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card.Black {
   background: linear-gradient(to bottom right, #222222 0%, #4A4A4A 100%);
 }
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions {
+  width: 100%;
+  height: 100%;
+  margin-top: 1.25rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Left-Side {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: 100%;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Left-Side .Question-Stats-Index {
+  position: relative;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1/1;
+  background: linear-gradient(to bottom right, #222222 0%, #4A4A4A 100%);
+  border-radius: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Left-Side .Question-Stats-Title {
+  font-size: 0.85rem;
+  color: rgba(13, 19, 33, 0.5);
+  font-weight: 700;
+  text-align: left;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Question-Stats-Actions {
+  width: 200px;
+  height: 100%;
+  background-color: #F2F2F2;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.75rem;
+  background: linear-gradient(to bottom right, #222222 0%, #4A4A4A 100%);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  position: relative;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most .Question-Stats-Actions-Most-Percentage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 46%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #06BEE1 0%, #4DDBF6 100%);
+  border-radius: 0.75rem;
+  z-index: 0;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most .Question-Stats-Actions-Most-Text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Expand {
+  height: 100%;
+  width: auto;
+  aspect-ratio: 1/1;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(13, 19, 33, 0.25);
+  transition: all 300ms ease;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Expand:hover {
+  cursor: pointer;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats.Open .Question-Stats-Actions .Question-Stats-Actions-Expand {
+  transform: rotate(180deg);
+}
 
 .Header {
   width: 100%;
