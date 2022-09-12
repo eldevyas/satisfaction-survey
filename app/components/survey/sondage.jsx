@@ -22,6 +22,10 @@ class Wrapper extends React.Component {
             answers: [],
             loading: true
         };
+
+        this.timer = null;
+
+        this.timeSpent = 0;
     }
 
     getQuestions = () => {
@@ -29,12 +33,16 @@ class Wrapper extends React.Component {
             loading: true
         });
 
-        axios.get('https://api.jsonbin.io/v3/b/62c97a915d53821c30966f4a/latest')
+
+        let URL = "https://api.jsonbin.io/v3/b/62c97a915d53821c30966f4a/latest"; // URL of the API used for exprimental purposes
+        URL = "http://localhost/SatisfactionSurvey/server/public/survey/questions"; // Real Server API
+
+        axios.get(URL)
             .then(response => {
-                console.log(response.data.record);
+                console.log(response.data);
                 setTimeout(() => {
                     this.setState({
-                        questions: response.data.record,
+                        questions: response.data,
                         currentQuestion: null,
                         loading: false
                     });
@@ -58,6 +66,27 @@ class Wrapper extends React.Component {
     }
 
 
+    startTimer = () => {
+        // Start the timer
+        this.timer = setInterval(() => {
+            this.timeSpent++;
+        }, 1000);
+
+        // If the window is on blur or closed, stop the timer
+        window.addEventListener('blur', () => {
+            clearInterval(this.timer);
+        }, false);
+
+        window.addEventListener('beforeunload', () => {
+            clearInterval(this.timer);
+        }, false);
+    };
+
+    stopTimer = () => {
+        clearInterval(this.timer);
+    }
+
+
 
     // Initialize the current question
     initializeCurrentQuestion = () => {
@@ -73,6 +102,9 @@ class Wrapper extends React.Component {
         };
 
         this.props.sendProgress(data);
+
+        // Start a timer to count down the time  of the survey
+        this.startTimer();
     }
 
     // Increment the current question by 1
@@ -117,7 +149,15 @@ class Wrapper extends React.Component {
             };
 
             this.props.sendProgress(data);
-            this.props.sendSurvey(this.state.answers);
+
+            // Add Time Spent to the answers array with its own key "Duration"
+            
+            let surveyAnswers = {};
+
+            surveyAnswers.Duration = this.timeSpent;
+            surveyAnswers.Answers = this.state.answers;
+
+            this.props.sendSurvey(surveyAnswers);
         }
     }
 
@@ -254,7 +294,43 @@ export default class Sondage extends React.Component {
     }
 
     handleSurvey = (answers) => {
+        // add duration to the answers
         console.log(answers);
+
+        // API URL
+        let URL = "http://localhost/SatisfactionSurvey/server/public/survey/add"
+        
+
+        // axios POST request
+        const options = {
+            url: URL,
+            method: 'POST',
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json;charset=UTF-8'
+            },
+            data: answers
+        };
+
+        axios(options)
+        .then(response => {
+            console.log(response.status);
+
+            if (response.status === 200) {
+                console.log("Survey sent!");
+                pushSuccess("Votre sondage a bien été envoyé!");
+            } else {
+                console.log("Error sending survey!");
+                pushFailure("Erreur lors de l'envoi du sondage!");
+            }
+
+
+        })
+        .catch(error => {
+            console.log(error);
+            pushFailure(error.message);
+        });
+
     }
 
     render() {

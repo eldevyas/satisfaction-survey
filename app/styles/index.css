@@ -354,7 +354,7 @@
   height: 100%;
   right: -100px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Container .Home .LandingPage {
     height: auto;
     display: flex;
@@ -577,7 +577,7 @@
   color: rgba(13, 19, 33, 0.5);
   margin-bottom: 0px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Container .Home .Section {
     margin-top: 100px;
     position: relative;
@@ -650,7 +650,7 @@
   align-items: center;
   right: -100px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Container .Home .Section-2 {
     flex-direction: column-reverse;
     justify-content: flex-start;
@@ -718,7 +718,7 @@
 .Container .Footer .Footer-Social .Social-Icon:hover {
   fill: #26c485;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Container .Footer {
     flex-direction: column;
     align-items: center;
@@ -734,11 +734,58 @@
     margin-top: 20px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Container .Home {
     padding: 0 30px !important;
     padding-top: 20px;
   }
+}
+.Container .Current_users {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  z-index: 100;
+  pointer-events: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1rem;
+}
+.Container .Current_users .Current_users_container {
+  width: fit-content;
+  height: fit-content;
+  aspect-ratio: 16/9;
+  background: rgba(242, 242, 242, 0.5);
+  border-radius: 0.5rem;
+  border: 2px solid rgba(13, 19, 33, 0.25);
+  min-width: 4rem;
+  min-height: 2rem;
+  max-width: 100px;
+  max-height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  color: rgba(13, 19, 33, 0.25);
+}
+.Container .Current_users .Current_users_container svg {
+  position: relative;
+  color: inherit;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+.Container .Current_users .Current_users_container h1 {
+  text-align: center;
+  font-size: 1rem;
+  color: inherit;
+  font-weight: 800;
+  opacity: 1;
 }
 
 .Survey {
@@ -1382,7 +1429,7 @@
 .Login .LoginContainer .wrapper {
   width: 350px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Login .LoginContainer .wrapper {
     width: 90%;
   }
@@ -1709,6 +1756,11 @@
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container {
+    flex-direction: column-reverse;
+  }
+}
 .DashboardPage .Dashboard .Dashboard-Container .Sidebar {
   width: 250px;
   min-width: 20%;
@@ -1803,10 +1855,15 @@
   transition: all 300ms ease;
   user-select: none;
   font-family: Poppins, sans-serif;
+  font-size: 0.8rem;
+  font-size: 1vw;
+  text-align: left;
 }
 .DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Content .Nav-item .Nav-icon {
   margin-right: 0.5rem;
   font-size: 1.5rem;
+  pointer-events: none;
+  background: none;
 }
 .DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Content .Nav-item:hover {
   cursor: pointer;
@@ -1854,16 +1911,74 @@
   text-transform: uppercase;
   padding: 0 1rem;
   font-size: 0.8rem;
+  font-size: 1vw;
   transition: all 300ms ease;
   user-select: none;
   font-family: Poppins, sans-serif;
+  text-align: left;
 }
 .DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Footer .DisconnectBtn .Nav-icon {
   margin-right: 0.5rem;
   font-size: 1.5rem;
+  pointer-events: none;
+  background: none;
 }
 .DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Footer .DisconnectBtn:hover {
   cursor: pointer;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation {
+  width: 100%;
+  height: 60px;
+  min-height: 60px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 100;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 5px 5px;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation .Sidebar-Content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation .Sidebar-Content .Nav-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(13, 19, 33, 0.25);
+  border-radius: 15px;
+  transition: all 300ms ease;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation .Sidebar-Content .Nav-item .Nav-icon {
+  pointer-events: none;
+  background: none;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation .Sidebar-Content .Nav-item.Selected {
+  background: linear-gradient(to bottom right, #06BEE1 0%, #4DDBF6 100%);
+  color: #fff;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation .Sidebar-Content .Nav-item.Unselected {
+  background: rgba(13, 19, 33, 0);
+  color: rgba(13, 19, 33, 0.25);
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation .Sidebar-Content .Nav-item.Logout.Selected {
+  background: linear-gradient(to bottom right, #E63946 0%, #FA717C 100%);
 }
 .DashboardPage .Dashboard .Dashboard-Container .DashboardContent {
   width: 100%;
@@ -1875,15 +1990,44 @@
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: calc(100% - 60px - 4rem);
+  }
+}
 .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container {
   width: 100%;
   height: 100%;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 1.5rem 0;
+  padding: 1.5rem;
+  padding-bottom: 1.5rem;
   position: relative;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container {
+    max-height: 100vh;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem;
+    padding-bottom: 1rem;
+  }
 }
 .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header {
   width: 100%;
@@ -1911,12 +2055,22 @@
   color: #0D1321;
   margin-bottom: 0.2rem;
 }
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-Label .Content-Header-Title {
+    font-size: 0.75rem;
+  }
+}
 .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-Label .Content-Header-Subtitle {
   font-size: 0.7rem;
   color: #06BEE1;
   font-weight: 800;
   font-family: Poppins, sans-serif;
   color: #06BEE1;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-Label .Content-Header-Subtitle {
+    font-size: 0.6rem;
+  }
 }
 .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-User {
   display: flex;
@@ -2006,17 +2160,185 @@
   background-repeat: no-repeat;
   background-attachment: unset;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container {
-  height: 100%;
-  width: 100%;
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages {
   margin-top: 1.5rem;
-  background-color: transparent;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Cards {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .Statistiques-Container-Loading-Text {
+  font-size: 0.8rem;
+  font-weight: 800;
+  font-family: Poppins, sans-serif;
+  color: rgba(13, 19, 33, 0.25);
+  margin-bottom: 0.2rem;
+  margin-top: 5rem;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .Statistiques-Container-Loading-Text {
+    font-size: 0.75rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading p {
+  font-size: 0.7rem;
+  font-weight: 300;
+  font-family: Poppins, sans-serif;
+  color: rgba(13, 19, 33, 0.25);
+  margin-top: 0.5rem;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading p {
+    font-size: 0.65rem;
+  }
+}
+@keyframes square-animation {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  10.5% {
+    left: 0;
+    top: 0;
+  }
+  12.5% {
+    left: 32px;
+    top: 0;
+  }
+  23% {
+    left: 32px;
+    top: 0;
+  }
+  25% {
+    left: 64px;
+    top: 0;
+  }
+  35.5% {
+    left: 64px;
+    top: 0;
+  }
+  37.5% {
+    left: 64px;
+    top: 32px;
+  }
+  48% {
+    left: 64px;
+    top: 32px;
+  }
+  50% {
+    left: 32px;
+    top: 32px;
+  }
+  60.5% {
+    left: 32px;
+    top: 32px;
+  }
+  62.5% {
+    left: 32px;
+    top: 64px;
+  }
+  73% {
+    left: 32px;
+    top: 64px;
+  }
+  75% {
+    left: 0;
+    top: 64px;
+  }
+  85.5% {
+    left: 0;
+    top: 64px;
+  }
+  87.5% {
+    left: 0;
+    top: 32px;
+  }
+  98% {
+    left: 0;
+    top: 32px;
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  transform: rotate(45deg);
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  margin: 2px;
+  border-radius: 0px;
+  background: rgba(13, 19, 33, 0.25);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  animation: square-animation 10s ease-in-out infinite both;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(0) {
+  animation-delay: 0s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(1) {
+  animation-delay: -1.4285714286s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(2) {
+  animation-delay: -2.8571428571s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(3) {
+  animation-delay: -4.2857142857s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(4) {
+  animation-delay: -5.7142857143s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(5) {
+  animation-delay: -7.1428571429s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(6) {
+  animation-delay: -8.5714285714s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(7) {
+  animation-delay: -10s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container {
+    width: 100%;
+    height: 80vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards {
   width: 100%;
   height: fit-content;
   display: flex;
@@ -2025,7 +2347,16 @@
   justify-content: space-between;
   align-items: center;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card {
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card {
+  position: relative;
   width: calc(25% - 1rem);
   height: 135px;
   background-color: #fff;
@@ -2037,8 +2368,19 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  overflow: hidden;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card .Statistiques-Card-Title {
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card {
+    width: calc(50% - 0.5rem);
+    height: auto;
+    align-self: stretch;
+  }
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card:nth-child(1), .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card:nth-child(2) {
+    margin-bottom: 1rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card .Statistiques-Card-Title {
   width: 100%;
   height: fit-content;
   display: flex;
@@ -2046,69 +2388,240 @@
   justify-content: flex-start;
   align-items: center;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card .Statistiques-Card-Title .Statistiques-Card-Title-Icon {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card .Statistiques-Card-Title .Statistiques-Card-Title-Icon {
   font-size: 1rem;
   color: inherit;
   margin-right: 0.5rem;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card .Statistiques-Card-Title p {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card .Statistiques-Card-Title p {
   font-size: 0.75rem;
   color: inherit;
   font-weight: 500;
+  white-space: nowrap;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card h1 {
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card .Statistiques-Card-Title p {
+    font-size: 0.6rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card h1 {
+  position: relative;
   font-weight: 800;
   color: inherit;
-  font-size: 2rem;
+  font-size: 16px;
+  font-size: 2vw;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  text-align: left;
   height: fit-content;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card.Red {
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card h1 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card.Red {
   background: linear-gradient(to bottom right, #E63946 0%, #FA717C 100%);
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card.White {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card.White {
   background: linear-gradient(to bottom right, #F0F0F0 0%, #FFFFFF 100%);
   color: rgba(13, 19, 33, 0.5);
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card.Green {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card.Green {
   background: linear-gradient(to bottom right, #26C485 0%, #75F0BF 100%);
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card.Black {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card.Black {
   background: linear-gradient(to bottom right, #222222 0%, #4A4A4A 100%);
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container {
+  position: relative;
   width: 100%;
-  height: 100%;
+  flex-grow: 1;
   margin-top: 1.25rem;
+  background-color: #fff;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow: hidden;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes square-animation {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  10.5% {
+    left: 0;
+    top: 0;
+  }
+  12.5% {
+    left: 32px;
+    top: 0;
+  }
+  23% {
+    left: 32px;
+    top: 0;
+  }
+  25% {
+    left: 64px;
+    top: 0;
+  }
+  35.5% {
+    left: 64px;
+    top: 0;
+  }
+  37.5% {
+    left: 64px;
+    top: 32px;
+  }
+  48% {
+    left: 64px;
+    top: 32px;
+  }
+  50% {
+    left: 32px;
+    top: 32px;
+  }
+  60.5% {
+    left: 32px;
+    top: 32px;
+  }
+  62.5% {
+    left: 32px;
+    top: 64px;
+  }
+  73% {
+    left: 32px;
+    top: 64px;
+  }
+  75% {
+    left: 0;
+    top: 64px;
+  }
+  85.5% {
+    left: 0;
+    top: 64px;
+  }
+  87.5% {
+    left: 0;
+    top: 32px;
+  }
+  98% {
+    left: 0;
+    top: 32px;
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  transform: rotate(45deg);
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  margin: 2px;
+  border-radius: 0px;
+  background: rgba(13, 19, 33, 0.025);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  animation: square-animation 10s ease-in-out infinite both;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(0) {
+  animation-delay: 0s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(1) {
+  animation-delay: -1.4285714286s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(2) {
+  animation-delay: -2.8571428571s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(3) {
+  animation-delay: -4.2857142857s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(4) {
+  animation-delay: -5.7142857143s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(5) {
+  animation-delay: -7.1428571429s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(6) {
+  animation-delay: -8.5714285714s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(7) {
+  animation-delay: -10s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions::-webkit-scrollbar {
+  appearance: none !important;
+  display: none;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats {
   width: 100%;
   height: 60px;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0.5rem;
+  z-index: 1;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Left-Side {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: auto;
   height: 100%;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Left-Side .Question-Stats-Index {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Index {
   position: relative;
   width: auto;
   height: 100%;
@@ -2123,14 +2636,40 @@
   font-size: 1rem;
   font-weight: 700;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Left-Side .Question-Stats-Title {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Title {
   font-size: 0.85rem;
   color: rgba(13, 19, 33, 0.5);
   font-weight: 700;
   text-align: left;
+  white-space: wrap;
+  max-height: 100%;
+  overflow-x: hidden;
+  margin-right: 1rem;
+  overflow-y: auto;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Question-Stats-Actions {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Title::-webkit-scrollbar {
+  display: none;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Title:hover::-webkit-scrollbar {
+  display: block;
+  width: 5px;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Title:hover::-webkit-scrollbar-thumb {
+  background: rgba(13, 19, 33, 0.1);
+  border-radius: 5px;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Title:hover::-webkit-scrollbar-track {
+  background: rgba(13, 19, 33, 0);
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Title {
+    font-size: 0.7rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions {
   width: 200px;
+  min-width: 200px;
   height: 100%;
   background-color: #F2F2F2;
   border-radius: 0.75rem;
@@ -2139,7 +2678,14 @@
   justify-content: space-between;
   align-items: center;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most {
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions {
+    width: fit-content;
+    aspect-ratio: 1/1;
+    min-width: calc(60px - 1rem);
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most {
   width: 100%;
   height: 100%;
   display: flex;
@@ -2152,7 +2698,7 @@
   font-weight: 700;
   position: relative;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most .Question-Stats-Actions-Most-Percentage {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most .Question-Stats-Actions-Most-Percentage {
   position: absolute;
   left: 0;
   top: 0;
@@ -2163,7 +2709,7 @@
   border-radius: 0.75rem;
   z-index: 0;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most .Question-Stats-Actions-Most-Text {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most .Question-Stats-Actions-Most-Text {
   width: 100%;
   height: 100%;
   display: flex;
@@ -2172,9 +2718,20 @@
   align-items: center;
   z-index: 1;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Expand {
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most {
+    display: none;
+    font-size: 0.6rem;
+    aspect-ratio: 1/1;
+    height: 100%;
+    width: 100%;
+    min-width: none;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Expand {
   height: 100%;
-  width: auto;
+  width: 100%;
+  max-width: calc(60px - 1rem);
   aspect-ratio: 1/1;
   background: transparent;
   display: flex;
@@ -2182,12 +2739,164 @@
   align-items: center;
   color: rgba(13, 19, 33, 0.25);
   transition: all 300ms ease;
+  z-index: 0;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Expand:hover {
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Expand:hover {
   cursor: pointer;
 }
-.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Dashboard-Content-Container .Statistiques-Questions .Question-Stats.Open .Question-Stats-Actions .Question-Stats-Actions-Expand {
-  transform: rotate(180deg);
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-React-Open.React {
+  width: 100%;
+  border-radius: 1rem;
+  background-color: #fff;
+  animation: fadeIn 0.3s ease forwards;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-React-Open.React .Open-Answer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  color: rgba(13, 19, 33, 0.25);
+  font-weight: 700;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-React-Open.React .Open-Answer svg {
+  margin-right: 0.5rem;
+  color: rgba(13, 19, 33, 0.25) !important;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-React-Open.React .Open-Answer {
+    font-size: 0.7rem;
+  }
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-React-Open.React .Open-Answer svg {
+    margin-right: 0.25rem;
+    font-size: 1.2rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats.Choose .Question-Stats-Actions .Question-Stats-Actions-Most .Question-Stats-Actions-Most-Text .Question-Stats-Actions-Most-Text-Icon {
+  width: 1rem;
+  height: 1rem;
+  background: white;
+  color: #06BEE1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2rem;
+  margin-right: 0.25rem;
+  user-select: none;
+  font-size: 0.65rem;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open .Open-Answer {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+  z-index: 1;
+  opacity: 0.25;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open .Open-Answer .Left-Side {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  flex-grow: 1;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open .Open-Answer .Left-Side .Question-Stats-Order {
+  position: relative;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1/1;
+  background: linear-gradient(to bottom right, #222222 0%, #4A4A4A 100%);
+  border-radius: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open .Open-Answer .Left-Side .Question-Stats-Answer {
+  font-size: 0.85rem;
+  color: #0d1321;
+  font-weight: 700;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open .Open-Answer .Left-Side .Question-Stats-Answer {
+    font-size: 0.7rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open .Open-Answer .Right-Side {
+  position: relative;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1/1;
+  background: linear-gradient(to bottom right, #222222 0%, #4A4A4A 100%);
+  border-radius: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-UnderDevelopment {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-UnderDevelopment .Dashboard-UnderDevelopment--Image-Container {
+  width: 100%;
+  height: 200px;
+  background-image: url("/image/sleeping.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-UnderDevelopment .Dashboard-UnderDevelopment--Image-Container {
+    height: 150px;
+    width: 90%;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-UnderDevelopment h1 {
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-UnderDevelopment p {
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: rgba(13, 19, 33, 0.5);
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1rem;
 }
 
 .Header {
@@ -2469,7 +3178,7 @@
   z-index: 200;
   user-select: none;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Toastify__toast-container {
     width: 90%;
     margin: 0 auto;
@@ -2515,7 +3224,7 @@
 .Toastify__toast::-webkit-scrollbar {
   display: none;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Toastify__toast {
     width: fit-content;
     height: fit-content;

@@ -1,13 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Content from './../components/home/home';
-import { useContext } from 'react';
-import AuthContext from '../contexts/authContext';
+import OnlineUsers from "/components/home/online";
+
+
+
 
 export default function Home() {
-    const Context = useContext(AuthContext);
-
-    console.log(Context);
     
     return (
         <div className="Container">
@@ -20,6 +19,8 @@ export default function Home() {
             </div>
             
             <Content />
+
+            <OnlineUsers/>
         </div>
     )
 }

@@ -9,6 +9,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 
 include("../classes/user.php");
+include("../classes/survey.php");
 
 require '../vendor/autoload.php';
 
@@ -137,6 +138,64 @@ $app->post('/signin', function (Request $request, Response $response) {
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'POST');
 });
+
+
+$app->get('/survey/questions', function (Request $request, Response $response) {
+    $survey = new Survey($this->db);
+    $response->getBody()->write(json_encode($survey->getQuestions(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+    return $response;
+});
+
+
+$app->post('/survey/add', function (Request $request, Response $response) {
+    $survey = new Survey($this->db);
+    $body = $request->getBody();
+    $data = json_decode($body, true);
+
+    $status = $survey->addSurvey($data);
+
+    $response->getBody()->write(json_encode(array(
+        "status" => $status
+    ), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+
+    // if ($status) {
+    //     $response->getBody()->write(json_encode(array(
+    //         "status" => "success",
+    //         "message" => "Survey added successfully."
+    //     ), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+    // } else {
+    //     $response->getBody()->write(json_encode(array(
+    //         "status" => "error",
+    //         "message" => "Survey not added."
+    //     ), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+    // }
+});
+
+
+$app->post('/admin/survey/addQuestion', function (Request $request, Response $response) {
+    $survey = new Survey($this->db);
+    $body = $request->getBody();
+    $data = json_decode($body, true);
+
+    $status = $survey->addQuestion($data);
+
+    $response->getBody()->write(json_encode($status, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+});
+
+
+$app->get('/admin/survey/getQuestionsStats', function (Request $request, Response $response) {
+    $survey = new Survey($this->db);
+    $response->getBody()->write(json_encode($survey->getQuestionsStats(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+    return $response;
+});
+
+
+$app->get('/admin/survey/globalStats', function (Request $request, Response $response) {
+    $survey = new Survey($this->db);
+    $response->getBody()->write(json_encode($survey->getGlobalStats(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+    return $response;
+});
+
 
 
 

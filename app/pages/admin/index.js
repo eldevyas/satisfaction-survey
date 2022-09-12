@@ -51,6 +51,7 @@ export default function AdminPage() {
                             alt="Background image"
                             layout='fill'
                             objectFit='cover'
+                            priority={true}
                         />
                     </div>
                 </div>

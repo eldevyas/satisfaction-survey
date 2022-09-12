@@ -18,8 +18,8 @@ export default class Reacts extends React.Component {
         };
 
         this.responseBack = {
-            id: this.props.id,
-            answer: null
+            questionID: this.props.id,
+            answerID: null
         }
 
         this.currentAnswer = null
@@ -111,7 +111,7 @@ export default class Reacts extends React.Component {
                     {
                         this.props.choices.map((answer, index) => {
                             return (
-                                <div className="Answer" key={index} onClick={this.handleClick} answer={answer.text}>
+                                <div className="Answer" key={index} onClick={this.handleClick} answer={answer.id}>
                                     {answer.text}
                                 </div>
                             )

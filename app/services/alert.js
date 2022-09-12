@@ -28,7 +28,7 @@ function push(message) {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        toastId: 'default',
+        // toastId: 'default',
         icon: <ConstructionIcon/>
     });
 }

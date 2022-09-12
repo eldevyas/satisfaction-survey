@@ -46,7 +46,7 @@ export default class Reacts extends React.Component {
             clicked.classList.add('Selected');
 
             // Get answer from clicked div
-            const answer = document.querySelector('.React .Answers .Answer.Selected').getAttribute('answer');
+            const answer = document.querySelector('.React .Answers .Answer.Selected').getAttribute('answerid');
 
             // Set current answer to answer
             this.currentAnswer = answer;
@@ -112,23 +112,23 @@ export default class Reacts extends React.Component {
                 </div>
         
                 <div className="Answers">
-                    <div className="Answer Big BigNegative" onClick={this.handleClick} answer='Très insatisfait'>
+                    <div className="Answer Big BigNegative" onClick={this.handleClick} answer='Très insatisfait' answerid={1}>
                         <SentimentVeryDissatisfiedIcon/>
                     </div>
         
-                    <div className="Answer Medium MediumNegative" onClick={this.handleClick} answer='Insatisfait'>
+                    <div className="Answer Medium MediumNegative" onClick={this.handleClick} answer='Insatisfait' answerid={2}>
                         <SentimentDissatisfiedIcon/>
                     </div>
         
-                    <div className="Answer Small SmallNeutral" onClick={this.handleClick} answer='Neutre'>
+                    <div className="Answer Small SmallNeutral" onClick={this.handleClick} answer='Neutre' answerid={3}>
                         <SentimentNeutralIcon/>
                     </div>
         
-                    <div className="Answer Medium MediumPositive" onClick={this.handleClick} answer='Satisfait'>
+                    <div className="Answer Medium MediumPositive" onClick={this.handleClick} answer='Satisfait' answerid={4}>
                         <SentimentSatisfiedAltIcon/>
                     </div>
         
-                    <div className="Answer Big BigPositive" onClick={this.handleClick} answer='Très satisfait'>
+                    <div className="Answer Big BigPositive" onClick={this.handleClick} answer='Très satisfait' answerid={5}>
                         <SentimentVerySatisfiedIcon/>
                     </div>
                 </div>

@@ -74,7 +74,7 @@
   border: 1.5px solid #e63946;
   font-size: 12px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .P404 .T404 .Code {
     font-size: 5rem;
   }

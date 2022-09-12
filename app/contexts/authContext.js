@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 import { pushInfo , pushSuccess, pushFailure, pushWarning } from './../services/alert';
 import axios from 'axios';
 
+const CurrentURL = "localhost";
+
 
 function parseJwt (token) {
     var base64Url = token.split('.')[1];
@@ -46,7 +48,7 @@ export const AuthContextProvider = ({ children }) => {
     }, []);
 
     const login = async (credentials) => {
-        const SERVER_URL = "http://192.168.11.104/SatisfactionSurvey/server/public/";
+        const SERVER_URL = "http://localhost/SatisfactionSurvey/server/public/";
         // const SERVER_URL = "http://trycod.ntic";
 
         
