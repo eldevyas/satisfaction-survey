@@ -20,7 +20,7 @@ export default function LandingPage() {
                 C’est une enquéte de satisfaction pour aider l’administration à améliorer l’expérience éducationnel de votre institut NTIC Rabat, soyez libres d’éssayer.
             </p>
 
-            <Link href='/sondage/'>
+            <Link scroll={false} href='/sondage/'>
                 <Button variant="contained" className="Button">
                     Démarrer l'enquête
                 </Button>

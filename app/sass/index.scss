@@ -23,6 +23,55 @@
     @import './components/Header/DesktopHeader';
     @import './components/Header/MobileHeader';
     @import './components/Home/Home';
+    .Current_users {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: none;
+        z-index: 100;
+        pointer-events: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 1rem;
+        .Current_users_container {
+            $color: rgba($C1, 0.25);
+            $bgColor: rgba($C4, 0.5);
+            width: fit-content;
+            height: fit-content;
+            aspect-ratio: 16/9;
+            background: $bgColor;
+            border-radius: 0.5rem;
+            border: 2px solid $color;
+            min-width: 4rem;
+            min-height: 2rem;
+            max-width: 100px;
+            max-height: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0.5rem 1rem;
+            color: $color;
+            svg {
+                position: relative;
+                color: inherit;
+                font-size: 1.2rem;
+                margin-right: 1rem;
+            }
+            h1 {
+                text-align: center;
+                font-size: 1rem;
+                color: inherit;
+                font-weight: 800;
+                opacity: 1;
+            }
+        }
+    }
 }
 
 @import './components/Sondage/Sondage';

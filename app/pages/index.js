@@ -1,19 +1,26 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Content from './../components/home/home'
+import Content from './../components/home/home';
+import OnlineUsers from "/components/home/online";
+
+
+
 
 export default function Home() {
-  return (
-    <div className="Container">
-        <Head>
-            <title>NTIC Rabat - Satisfaction</title>
-        </Head>
+    
+    return (
+        <div className="Container">
+            <Head>
+                <title>NTIC Rabat - Satisfaction</title>
+            </Head>
 
-        <div className="Background">
-            <Image className="BackgroundImage" src={"/image/background.png"} alt="background" layout='fill' objectFit='cover'/>
+            <div className="Background">
+                <Image className="BackgroundImage" src={"/image/background.png"} alt="background" layout='fill' objectFit='cover'/>
+            </div>
+            
+            <Content />
+
+            <OnlineUsers/>
         </div>
-        
-        <Content />
-    </div>
-  )
+    )
 }

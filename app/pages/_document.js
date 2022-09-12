@@ -22,13 +22,17 @@ export default function Document() {
         setLoading(false);
     };
 
-
+    
     return (
         <Html lang="id">
             <Head>
                 <meta charSet="utf-8" />
                 <link rel="icon" type="image/x-icon" href="/ico/favicon.ico" />
                 <script type="text/javascript" src="/plugins/jquery-3.6.0.min.js"></script>
+                <script src="http://127.0.0.1:3000/socket.io/socket.io.js "></script>
+                <script>
+                    let socket = null;
+                </script>
             </Head>
             <body>
                 <Loading loading={loading} />

@@ -51,9 +51,10 @@
   color: #e63946;
   margin-right: 15px;
   font-weight: bold;
-  font-size: 14px;
-  padding: 7px 14px;
+  font-size: 0.8rem;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
   width: 47.5%;
   border: 1.5px solid #e63946;
   box-sizing: border-box !important;
@@ -63,16 +64,17 @@
   background-color: #e63946;
   color: rgba(242, 242, 242, 0.8);
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.8rem;
   box-shadow: 0px 20px 50px rgba(230, 57, 70, 0.25);
-  padding: 7px 14px;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
   width: 47.5%;
   box-sizing: border-box !important;
   border: 1.5px solid #e63946;
   font-size: 12px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .P404 .T404 .Code {
     font-size: 5rem;
   }
@@ -90,9 +92,10 @@
     color: #e63946;
     margin-right: 15px;
     font-weight: bold;
-    font-size: 14px;
-    padding: 7px 14px;
+    font-size: 0.8rem;
+    padding: 9.5px 25px;
     font-family: Poppins, sans-serif;
+    border-radius: 7.5px;
     width: 100%;
     border: 1.5px solid #e63946;
     box-sizing: border-box !important;
@@ -102,10 +105,11 @@
     background-color: #e63946;
     color: rgba(242, 242, 242, 0.8);
     font-weight: bold;
-    font-size: 14px;
+    font-size: 0.8rem;
     box-shadow: 0px 20px 50px rgba(230, 57, 70, 0.25);
-    padding: 7px 14px;
+    padding: 9.5px 25px;
     font-family: Poppins, sans-serif;
+    border-radius: 7.5px;
     width: 100%;
     box-sizing: border-box !important;
     border: 1.5px solid #e63946;

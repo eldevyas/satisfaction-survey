@@ -98,18 +98,20 @@
   color: #26c485;
   margin-right: 15px;
   font-weight: bold;
-  font-size: 14px;
-  padding: 7px 14px;
+  font-size: 0.8rem;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
 }
 .Container .Header .HeaderContentRight .PrimaryButton {
   background-color: #26c485;
   color: rgba(242, 242, 242, 0.8);
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.8rem;
   box-shadow: 0px 20px 50px rgba(38, 196, 133, 0.25);
-  padding: 7px 14px;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
 }
 .Container .Header .HeaderContentRight .NavigationLinks {
   margin-left: 50px;
@@ -352,7 +354,7 @@
   height: 100%;
   right: -100px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Container .Home .LandingPage {
     height: auto;
     display: flex;
@@ -575,7 +577,7 @@
   color: rgba(13, 19, 33, 0.5);
   margin-bottom: 0px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Container .Home .Section {
     margin-top: 100px;
     position: relative;
@@ -648,7 +650,7 @@
   align-items: center;
   right: -100px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Container .Home .Section-2 {
     flex-direction: column-reverse;
     justify-content: flex-start;
@@ -716,7 +718,7 @@
 .Container .Footer .Footer-Social .Social-Icon:hover {
   fill: #26c485;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Container .Footer {
     flex-direction: column;
     align-items: center;
@@ -732,11 +734,58 @@
     margin-top: 20px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Container .Home {
     padding: 0 30px !important;
     padding-top: 20px;
   }
+}
+.Container .Current_users {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  z-index: 100;
+  pointer-events: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1rem;
+}
+.Container .Current_users .Current_users_container {
+  width: fit-content;
+  height: fit-content;
+  aspect-ratio: 16/9;
+  background: rgba(242, 242, 242, 0.5);
+  border-radius: 0.5rem;
+  border: 2px solid rgba(13, 19, 33, 0.25);
+  min-width: 4rem;
+  min-height: 2rem;
+  max-width: 100px;
+  max-height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  color: rgba(13, 19, 33, 0.25);
+}
+.Container .Current_users .Current_users_container svg {
+  position: relative;
+  color: inherit;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+.Container .Current_users .Current_users_container h1 {
+  text-align: center;
+  font-size: 1rem;
+  color: inherit;
+  font-weight: 800;
+  opacity: 1;
 }
 
 .Survey {
@@ -853,9 +902,10 @@
   color: #26c485;
   margin-right: 15px;
   font-weight: bold;
-  font-size: 14px;
-  padding: 7px 14px;
+  font-size: 0.8rem;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
   width: 45%;
   border: 2px solid #26C485;
   border-width: 1.5px;
@@ -865,10 +915,11 @@
   background-color: #26c485;
   color: rgba(242, 242, 242, 0.8);
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.8rem;
   box-shadow: 0px 20px 50px rgba(38, 196, 133, 0.25);
-  padding: 7px 14px;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
   width: 45%;
   height: 40px;
 }
@@ -1036,9 +1087,10 @@
   color: #26c485;
   margin-right: 15px;
   font-weight: bold;
-  font-size: 14px;
-  padding: 7px 14px;
+  font-size: 0.8rem;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
   width: 45%;
   border: 2px solid #26C485;
   border-width: 1.5px;
@@ -1048,10 +1100,11 @@
   background-color: #26c485;
   color: rgba(242, 242, 242, 0.8);
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.8rem;
   box-shadow: 0px 20px 50px rgba(38, 196, 133, 0.25);
-  padding: 7px 14px;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
   width: 45%;
   height: 40px;
 }
@@ -1145,9 +1198,10 @@
   color: #26c485;
   margin-right: 15px;
   font-weight: bold;
-  font-size: 14px;
-  padding: 7px 14px;
+  font-size: 0.8rem;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
   width: 45%;
   border: 2px solid #26C485;
   border-width: 1.5px;
@@ -1157,10 +1211,11 @@
   background-color: #26c485;
   color: rgba(242, 242, 242, 0.8);
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.8rem;
   box-shadow: 0px 20px 50px rgba(38, 196, 133, 0.25);
-  padding: 7px 14px;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
   width: 45%;
   height: 40px;
 }
@@ -1213,9 +1268,10 @@
   color: #06bee1;
   margin-right: 15px;
   font-weight: bold;
-  font-size: 14px;
-  padding: 7px 14px;
+  font-size: 0.8rem;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
   width: 45%;
   border: 2px solid #06BEE1;
   border-width: 1.5px;
@@ -1225,10 +1281,11 @@
   background-color: #06bee1;
   color: rgba(242, 242, 242, 0.8);
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.8rem;
   box-shadow: 0px 20px 50px rgba(6, 190, 225, 0.25);
-  padding: 7px 14px;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
   width: 45%;
   height: 40px;
 }
@@ -1268,9 +1325,10 @@
   color: #0d1321;
   margin-right: 15px;
   font-weight: bold;
-  font-size: 14px;
-  padding: 7px 14px;
+  font-size: 0.8rem;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
   color: rgba(13, 19, 33, 0.25);
   margin-top: 20px;
   border-color: rgba(13, 19, 33, 0.25);
@@ -1371,7 +1429,7 @@
 .Login .LoginContainer .wrapper {
   width: 350px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Login .LoginContainer .wrapper {
     width: 90%;
   }
@@ -1400,6 +1458,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
 }
 .Login .LoginContainer .wrapper .Form-group .Input:not(:first-child) {
   margin-top: 15px;
@@ -1417,6 +1476,7 @@
   padding-left: 65px;
   padding-right: 65px;
   border-radius: 5px;
+  transition: all 0.3s ease;
 }
 .Login .LoginContainer .wrapper .Form-group .Input input::placeholder {
   color: rgba(13, 19, 33, 0.25);
@@ -1458,6 +1518,10 @@
 .Login .LoginContainer .wrapper .Form-group .Input .Visibility svg:hover {
   color: rgba(13, 19, 33, 0.35);
   cursor: pointer;
+}
+.Login .LoginContainer .wrapper .Form-group .Input input:focus {
+  outline: none;
+  background-color: rgba(6, 190, 225, 0.1);
 }
 .Login .LoginContainer .wrapper .RememberMe {
   position: relative;
@@ -1537,12 +1601,1302 @@
   background-color: #06bee1;
   color: rgba(242, 242, 242, 0.8);
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.8rem;
   box-shadow: 0px 20px 50px rgba(6, 190, 225, 0.25);
-  padding: 7px 14px;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
   width: 100%;
   height: 50px;
+  box-shadow: none;
+}
+
+.AdminPage {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(107.56deg, #FAFAFA 0%, #EBF5F7 49.48%, #F2F2F2 100%);
+  overflow: hidden;
+  position: relative;
+}
+.AdminPage .Background {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  pointer-events: none;
+  overflow: hidden;
+}
+.AdminPage .Background .BackgroundImage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.AdminPage .Content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.AdminPage .Content .Container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.AdminPage .Content .Container .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: fit-content;
+  margin-bottom: 1rem;
+}
+.AdminPage .Content .Container .row h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: rgba(13, 19, 33, 0.5);
+  text-align: center;
+  text-transform: none;
+}
+.AdminPage .Content .Container .row h1 span {
+  color: #06BEE1;
+  text-transform: capitalize;
+}
+.AdminPage .Content .Container .row .btnPrimary {
+  background-color: #06bee1;
+  color: rgba(242, 242, 242, 0.8);
+  font-weight: bold;
+  font-size: 0.8rem;
+  box-shadow: 0px 20px 50px rgba(6, 190, 225, 0.25);
+  padding: 9.5px 25px;
+  font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
+}
+.AdminPage .Content .Container .row .btnSecondary {
+  color: #06bee1;
+  margin-right: 15px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 9.5px 25px;
+  font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
+  -webkit-box-shadow: inset 0px 0px 0px 1.5px #06BEE1;
+  -moz-box-shadow: inset 0px 0px 0px 1.5px #06BEE1;
+  box-shadow: inset 0px 0px 0px 1.5px #06BEE1;
+}
+.AdminPage .Content .Container .title {
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+.AdminPage .Content .Container .title p {
+  font-size: 1rem;
+  margin-top: 10px;
+  font-weight: 300;
+  color: rgba(13, 19, 33, 0.35);
+}
+.AdminPage .Content .Container .title p span {
+  font-weight: 600;
+}
+
+.DashboardPage {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(107.56deg, #FAFAFA 0%, #EBF5F7 49.48%, #F2F2F2 100%);
+  overflow: hidden;
+  position: relative;
+}
+.DashboardPage .Background {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  pointer-events: none;
+  overflow: hidden;
+}
+.DashboardPage .Background .BackgroundImage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.DashboardPage .Dashboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container {
+    flex-direction: column-reverse;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar {
+  width: 250px;
+  min-width: 20%;
+  height: 100%;
+  position: relative;
+  background: white;
+  border-radius: 0px 35px 35px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  height: 50px;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Header span {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes in {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
+@keyframes out {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Header span .Logo {
+  transition: all 0.3s ease;
+  animation: out 0.3s ease forwards;
+  width: 70px;
+  height: auto;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Header span:hover .Logo {
+  animation: in 0.3s ease forwards;
+  opacity: 0.8;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Header h1 {
+  font-size: 1rem;
+  color: rgba(13, 19, 33, 0.25);
+  font-weight: 800;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Content {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Content .Nav-item {
+  margin-bottom: 0.75rem;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(6, 190, 225, 0.25);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #06BEE1;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 1rem;
+  font-size: 0.8rem;
+  transition: all 300ms ease;
+  user-select: none;
+  font-family: Poppins, sans-serif;
+  font-size: 0.8rem;
+  font-size: 1vw;
+  text-align: left;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Content .Nav-item .Nav-icon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  pointer-events: none;
+  background: none;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Content .Nav-item:hover {
+  cursor: pointer;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Content .Selected {
+  background-color: rgba(6, 190, 225, 0.25);
+  color: #06BEE1;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Content .Selected:hover {
+  background-color: rgba(6, 190, 225, 0.35);
+  color: #06bee1;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Content .Selected:active {
+  background-color: rgba(6, 190, 225, 0.25);
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Content .Unselected {
+  background-color: rgba(6, 190, 225, 0);
+  color: rgba(13, 19, 33, 0.25);
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Content .Unselected:hover {
+  background-color: rgba(13, 19, 33, 0.025);
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Content .Unselected:active {
+  background-color: rgba(13, 19, 33, 0.05);
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Footer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Footer .DisconnectBtn {
+  margin-bottom: 0.75rem;
+  width: 100%;
+  height: 40px;
+  background-image: linear-gradient(to bottom right, #E63946 0%, #FA717C 100%);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #F2F2F2;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 1rem;
+  font-size: 0.8rem;
+  font-size: 1vw;
+  transition: all 300ms ease;
+  user-select: none;
+  font-family: Poppins, sans-serif;
+  text-align: left;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Footer .DisconnectBtn .Nav-icon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  pointer-events: none;
+  background: none;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Sidebar .Sidebar-Container .Sidebar-Footer .DisconnectBtn:hover {
+  cursor: pointer;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation {
+  width: 100%;
+  height: 60px;
+  min-height: 60px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 100;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 5px 5px;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation .Sidebar-Content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation .Sidebar-Content .Nav-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(13, 19, 33, 0.25);
+  border-radius: 15px;
+  transition: all 300ms ease;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation .Sidebar-Content .Nav-item .Nav-icon {
+  pointer-events: none;
+  background: none;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation .Sidebar-Content .Nav-item.Selected {
+  background: linear-gradient(to bottom right, #06BEE1 0%, #4DDBF6 100%);
+  color: #fff;
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation .Sidebar-Content .Nav-item.Unselected {
+  background: rgba(13, 19, 33, 0);
+  color: rgba(13, 19, 33, 0.25);
+}
+.DashboardPage .Dashboard .Dashboard-Container .Mobile-Navigation .Sidebar-Content .Nav-item.Logout.Selected {
+  background: linear-gradient(to bottom right, #E63946 0%, #FA717C 100%);
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: calc(100% - 60px - 4rem);
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container {
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container {
+    max-height: 100vh;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem;
+    padding-bottom: 1rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-Label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  width: fit-content;
+  text-align: left;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-Label .Content-Header-Title {
+  font-size: 0.9rem;
+  color: #06BEE1;
+  font-weight: 800;
+  font-family: Poppins, sans-serif;
+  color: #0D1321;
+  margin-bottom: 0.2rem;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-Label .Content-Header-Title {
+    font-size: 0.75rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-Label .Content-Header-Subtitle {
+  font-size: 0.7rem;
+  color: #06BEE1;
+  font-weight: 800;
+  font-family: Poppins, sans-serif;
+  color: #06BEE1;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-Label .Content-Header-Subtitle {
+    font-size: 0.6rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-User {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: fit-content;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-User .Content-Header-User-Actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: fit-content;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-User .Content-Header-User-Actions .Content-Header-User-Action {
+  height: 2rem !important;
+  width: 2rem !important;
+  min-width: 2rem !important;
+  max-width: 2rem !important;
+  min-height: 2rem !important;
+  max-height: 2rem !important;
+  padding: 0 !important;
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-User .Content-Header-User-Actions .Content-Header-User-Action .Content-Header-User-Action-Icon {
+  font-size: 0.8rem;
+  color: #06BEE1;
+  padding: 0;
+  margin: 0;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-User .Content-Header-User-Actions .Content-Header-User-Action .Content-Header-User-Action-Icon-Notification {
+  color: rgba(6, 190, 225, 0.25);
+  position: relative !important;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-User .Content-Header-User-Actions .Content-Header-User-Action .Content-Header-User-Action-Notification-Wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-User .Content-Header-User-Actions .Content-Header-User-Action .Content-Header-User-Action-Notification-Wrapper .Content-Header-User-Action-Notification-Indicator {
+  background-color: #06BEE1;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  position: relative;
+  left: 0.15rem;
+  top: -0.2rem;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-User .Content-Header-User-Actions .Content-Header-User-Action .MuiTouchRipple-root {
+  width: 2rem !important;
+  height: 2rem !important;
+  margin: 0;
+  padding: 0;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-User .Content-Header-User-Actions .Content-Header-User-Action:hover {
+  cursor: pointer !important;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-User .Content-Header-User-Actions .Content-Header-User-Action:not(:last-child) {
+  margin-right: 1rem;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-User .Content-Header-User-Avatar {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to bottom right, #06BEE1 0%, #4DDBF6 100%);
+  border-radius: 1rem;
+  margin-left: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Content-Header .Content-Header-User .Content-Header-User-Avatar .Content-Header-User-Avatar-Person {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: unset;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages {
+  margin-top: 1.5rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .Statistiques-Container-Loading-Text {
+  font-size: 0.8rem;
+  font-weight: 800;
+  font-family: Poppins, sans-serif;
+  color: rgba(13, 19, 33, 0.25);
+  margin-bottom: 0.2rem;
+  margin-top: 5rem;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .Statistiques-Container-Loading-Text {
+    font-size: 0.75rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading p {
+  font-size: 0.7rem;
+  font-weight: 300;
+  font-family: Poppins, sans-serif;
+  color: rgba(13, 19, 33, 0.25);
+  margin-top: 0.5rem;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading p {
+    font-size: 0.65rem;
+  }
+}
+@keyframes square-animation {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  10.5% {
+    left: 0;
+    top: 0;
+  }
+  12.5% {
+    left: 32px;
+    top: 0;
+  }
+  23% {
+    left: 32px;
+    top: 0;
+  }
+  25% {
+    left: 64px;
+    top: 0;
+  }
+  35.5% {
+    left: 64px;
+    top: 0;
+  }
+  37.5% {
+    left: 64px;
+    top: 32px;
+  }
+  48% {
+    left: 64px;
+    top: 32px;
+  }
+  50% {
+    left: 32px;
+    top: 32px;
+  }
+  60.5% {
+    left: 32px;
+    top: 32px;
+  }
+  62.5% {
+    left: 32px;
+    top: 64px;
+  }
+  73% {
+    left: 32px;
+    top: 64px;
+  }
+  75% {
+    left: 0;
+    top: 64px;
+  }
+  85.5% {
+    left: 0;
+    top: 64px;
+  }
+  87.5% {
+    left: 0;
+    top: 32px;
+  }
+  98% {
+    left: 0;
+    top: 32px;
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  transform: rotate(45deg);
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  margin: 2px;
+  border-radius: 0px;
+  background: rgba(13, 19, 33, 0.25);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  animation: square-animation 10s ease-in-out infinite both;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(0) {
+  animation-delay: 0s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(1) {
+  animation-delay: -1.4285714286s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(2) {
+  animation-delay: -2.8571428571s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(3) {
+  animation-delay: -4.2857142857s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(4) {
+  animation-delay: -5.7142857143s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(5) {
+  animation-delay: -7.1428571429s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(6) {
+  animation-delay: -8.5714285714s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Statistiques-Container-Loading .loader-square:nth-of-type(7) {
+  animation-delay: -10s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container {
+    width: 100%;
+    height: 80vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card {
+  position: relative;
+  width: calc(25% - 1rem);
+  height: 135px;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.1);
+  padding: 1.25rem 1rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card {
+    width: calc(50% - 0.5rem);
+    height: auto;
+    align-self: stretch;
+  }
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card:nth-child(1), .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card:nth-child(2) {
+    margin-bottom: 1rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card .Statistiques-Card-Title {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card .Statistiques-Card-Title .Statistiques-Card-Title-Icon {
+  font-size: 1rem;
+  color: inherit;
+  margin-right: 0.5rem;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card .Statistiques-Card-Title p {
+  font-size: 0.75rem;
+  color: inherit;
+  font-weight: 500;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card .Statistiques-Card-Title p {
+    font-size: 0.6rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card h1 {
+  position: relative;
+  font-weight: 800;
+  color: inherit;
+  font-size: 16px;
+  font-size: 2vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  height: fit-content;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card h1 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card.Red {
+  background: linear-gradient(to bottom right, #E63946 0%, #FA717C 100%);
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card.White {
+  background: linear-gradient(to bottom right, #F0F0F0 0%, #FFFFFF 100%);
+  color: rgba(13, 19, 33, 0.5);
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card.Green {
+  background: linear-gradient(to bottom right, #26C485 0%, #75F0BF 100%);
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Cards .Statistiques-Card.Black {
+  background: linear-gradient(to bottom right, #222222 0%, #4A4A4A 100%);
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  margin-top: 1.25rem;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes square-animation {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  10.5% {
+    left: 0;
+    top: 0;
+  }
+  12.5% {
+    left: 32px;
+    top: 0;
+  }
+  23% {
+    left: 32px;
+    top: 0;
+  }
+  25% {
+    left: 64px;
+    top: 0;
+  }
+  35.5% {
+    left: 64px;
+    top: 0;
+  }
+  37.5% {
+    left: 64px;
+    top: 32px;
+  }
+  48% {
+    left: 64px;
+    top: 32px;
+  }
+  50% {
+    left: 32px;
+    top: 32px;
+  }
+  60.5% {
+    left: 32px;
+    top: 32px;
+  }
+  62.5% {
+    left: 32px;
+    top: 64px;
+  }
+  73% {
+    left: 32px;
+    top: 64px;
+  }
+  75% {
+    left: 0;
+    top: 64px;
+  }
+  85.5% {
+    left: 0;
+    top: 64px;
+  }
+  87.5% {
+    left: 0;
+    top: 32px;
+  }
+  98% {
+    left: 0;
+    top: 32px;
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  transform: rotate(45deg);
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  margin: 2px;
+  border-radius: 0px;
+  background: rgba(13, 19, 33, 0.025);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  animation: square-animation 10s ease-in-out infinite both;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(0) {
+  animation-delay: 0s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(1) {
+  animation-delay: -1.4285714286s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(2) {
+  animation-delay: -2.8571428571s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(3) {
+  animation-delay: -4.2857142857s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(4) {
+  animation-delay: -5.7142857143s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(5) {
+  animation-delay: -7.1428571429s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(6) {
+  animation-delay: -8.5714285714s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions-Loading .loader-square:nth-of-type(7) {
+  animation-delay: -10s;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions::-webkit-scrollbar {
+  appearance: none !important;
+  display: none;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+  z-index: 1;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: 100%;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Index {
+  position: relative;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1/1;
+  background: linear-gradient(to bottom right, #222222 0%, #4A4A4A 100%);
+  border-radius: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Title {
+  font-size: 0.85rem;
+  color: rgba(13, 19, 33, 0.5);
+  font-weight: 700;
+  text-align: left;
+  white-space: wrap;
+  max-height: 100%;
+  overflow-x: hidden;
+  margin-right: 1rem;
+  overflow-y: auto;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Title::-webkit-scrollbar {
+  display: none;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Title:hover::-webkit-scrollbar {
+  display: block;
+  width: 5px;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Title:hover::-webkit-scrollbar-thumb {
+  background: rgba(13, 19, 33, 0.1);
+  border-radius: 5px;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Title:hover::-webkit-scrollbar-track {
+  background: rgba(13, 19, 33, 0);
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Left-Side .Question-Stats-Title {
+    font-size: 0.7rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions {
+  width: 200px;
+  min-width: 200px;
+  height: 100%;
+  background-color: #F2F2F2;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions {
+    width: fit-content;
+    aspect-ratio: 1/1;
+    min-width: calc(60px - 1rem);
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.75rem;
+  background: linear-gradient(to bottom right, #222222 0%, #4A4A4A 100%);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  position: relative;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most .Question-Stats-Actions-Most-Percentage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 46%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #06BEE1 0%, #4DDBF6 100%);
+  border-radius: 0.75rem;
+  z-index: 0;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most .Question-Stats-Actions-Most-Text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Most {
+    display: none;
+    font-size: 0.6rem;
+    aspect-ratio: 1/1;
+    height: 100%;
+    width: 100%;
+    min-width: none;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Expand {
+  height: 100%;
+  width: 100%;
+  max-width: calc(60px - 1rem);
+  aspect-ratio: 1/1;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(13, 19, 33, 0.25);
+  transition: all 300ms ease;
+  z-index: 0;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats .Question-Stats-Actions .Question-Stats-Actions-Expand:hover {
+  cursor: pointer;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-React-Open.React {
+  width: 100%;
+  border-radius: 1rem;
+  background-color: #fff;
+  animation: fadeIn 0.3s ease forwards;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-React-Open.React .Open-Answer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  color: rgba(13, 19, 33, 0.25);
+  font-weight: 700;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-React-Open.React .Open-Answer svg {
+  margin-right: 0.5rem;
+  color: rgba(13, 19, 33, 0.25) !important;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-React-Open.React .Open-Answer {
+    font-size: 0.7rem;
+  }
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-React-Open.React .Open-Answer svg {
+    margin-right: 0.25rem;
+    font-size: 1.2rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats.Choose .Question-Stats-Actions .Question-Stats-Actions-Most .Question-Stats-Actions-Most-Text .Question-Stats-Actions-Most-Text-Icon {
+  width: 1rem;
+  height: 1rem;
+  background: white;
+  color: #06BEE1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2rem;
+  margin-right: 0.25rem;
+  user-select: none;
+  font-size: 0.65rem;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open .Open-Answer {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+  z-index: 1;
+  opacity: 0.25;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open .Open-Answer .Left-Side {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  flex-grow: 1;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open .Open-Answer .Left-Side .Question-Stats-Order {
+  position: relative;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1/1;
+  background: linear-gradient(to bottom right, #222222 0%, #4A4A4A 100%);
+  border-radius: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open .Open-Answer .Left-Side .Question-Stats-Answer {
+  font-size: 0.85rem;
+  color: #0d1321;
+  font-weight: 700;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open .Open-Answer .Left-Side .Question-Stats-Answer {
+    font-size: 0.7rem;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-Content-Container .Statistiques-Questions-Container .Statistiques-Questions .Question .Question-Stats-Choose-Open .Open-Answer .Right-Side {
+  position: relative;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1/1;
+  background: linear-gradient(to bottom right, #222222 0%, #4A4A4A 100%);
+  border-radius: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-UnderDevelopment {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-UnderDevelopment .Dashboard-UnderDevelopment--Image-Container {
+  width: 100%;
+  height: 200px;
+  background-image: url("/image/sleeping.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-UnderDevelopment .Dashboard-UnderDevelopment--Image-Container {
+    height: 150px;
+    width: 90%;
+  }
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-UnderDevelopment h1 {
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.DashboardPage .Dashboard .Dashboard-Container .DashboardContent .Content-Container .Pages .Dashboard-UnderDevelopment p {
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: rgba(13, 19, 33, 0.5);
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1rem;
 }
 
 .Header {
@@ -1624,18 +2978,20 @@
   color: #26c485;
   margin-right: 15px;
   font-weight: bold;
-  font-size: 14px;
-  padding: 7px 14px;
+  font-size: 0.8rem;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
 }
 .Header .HeaderContentRight .PrimaryButton {
   background-color: #26c485;
   color: rgba(242, 242, 242, 0.8);
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.8rem;
   box-shadow: 0px 20px 50px rgba(38, 196, 133, 0.25);
-  padding: 7px 14px;
+  padding: 9.5px 25px;
   font-family: Poppins, sans-serif;
+  border-radius: 7.5px;
 }
 .Header .HeaderContentRight .NavigationLinks {
   margin-left: 50px;
@@ -1822,7 +3178,7 @@
   z-index: 200;
   user-select: none;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .Toastify__toast-container {
     width: 90%;
     margin: 0 auto;
@@ -1840,11 +3196,13 @@
 
 /** Classes for the displayed toast **/
 .Toastify__toast {
-  width: 100%;
-  height: 40px !important;
-  max-height: 40px !important;
+  width: fit-content;
+  height: fit-content !important;
+  max-height: fit-content !important;
+  max-width: 100vw;
+  white-space: nowrap;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: #06bee1;
   backdrop-filter: blur(25px);
   border: 1px solid #F2F2F2;
   border-radius: 5px;
@@ -1854,13 +3212,29 @@
   margin: 0;
   margin-top: 20px;
   padding-left: 5px;
+  padding-right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
+.Toastify__toast .Toastify__toast-icon {
+  margin-right: 20px;
+}
 .Toastify__toast::-webkit-scrollbar {
   display: none;
+}
+@media (max-width: 768px) {
+  .Toastify__toast {
+    width: fit-content;
+    height: fit-content;
+    max-width: 100%;
+    white-space: normal;
+    margin-top: 20px;
+  }
+  .Toastify__toast::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 :root {

@@ -15,11 +15,11 @@ export default function Merci(props) {
             </div>
 
             <div className="Buttons">
-                <Link href="/">
+                <Link scroll={false} href="/">
                     <Button variant="text" className='btnText'>évaluer</Button>
                 </Link>
 
-                <Link href="/">
+                <Link scroll={false} href="/">
                     <Button variant="primary" className='btnPrimary'>Accueil</Button>
                 </Link>
             </div>

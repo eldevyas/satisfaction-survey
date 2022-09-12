@@ -15,7 +15,7 @@ export default function Bienvenue(props) {
             </div>
 
             <div className="Buttons">
-                <Link href="/">
+                <Link scroll={false} href="/">
                     <Button variant="text" className='btnText'>Accueil</Button>
                 </Link>
                 <Button variant="primary" className='btnPrimary' onClick={props.initializeQuestion}>Commencer</Button>
