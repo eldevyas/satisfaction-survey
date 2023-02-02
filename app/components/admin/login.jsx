@@ -21,7 +21,6 @@ export default class LoginComponent extends React.Component {
         this.passwordRef = React.createRef(null);
         this.rememberMeRef = React.createRef(null);
 
-
         this.state = {
             showPassword: false,
         };
@@ -31,7 +30,6 @@ export default class LoginComponent extends React.Component {
             password: '',
             rememberMe: false
         }
-
 
         // Hide & show password icon
     }

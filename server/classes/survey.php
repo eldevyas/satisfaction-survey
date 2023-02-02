@@ -311,6 +311,10 @@ class Survey {
                 $question = $questionsStats[$count - 1]['id'];
                 $totalAnswers = $this->getTotalAnswers($question);
 
+                if (doubleval($totalAnswers) == 0.0) {
+                    $totalAnswers = 1;
+                }
+
                 $stats['percentage'] = round(($total / $totalAnswers) * 100, 0);
 
                 $questionsStats[$count - 1]['answers'][] = $stats;

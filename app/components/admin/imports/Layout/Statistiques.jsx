@@ -23,7 +23,7 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedOut
 import InsertEmoticonIcon from '@mui/icons-material/SentimentVerySatisfiedOutlined';
 //
 // Required Serivces and Functions
-import { pushSuccess } from '/services/alert';
+import { pushSuccess, pushFailure } from '/services/alert';
 
 /*!	
 * FitText.js 1.0 jQuery free version
@@ -402,7 +402,7 @@ export default function Statistiques() {
 
 
     let getGlobalStats = () => {
-        let URL = "http://localhost/SatisfactionSurvey/server/public/admin/survey/globalStats";
+        let URL = "http://localhost/Satisfaction-Survey/server/public/admin/survey/globalStats";
 
         axios.get(URL)
         .then(response => {
@@ -411,7 +411,7 @@ export default function Statistiques() {
         })
         .catch(error => {
             console.log(error);
-            PushFailure(error.message);
+            pushFailure(error.message);
         });
 
     };

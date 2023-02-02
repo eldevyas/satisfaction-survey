@@ -1,19 +1,154 @@
 [{
-        "question": "Mes professeurs expliquent les choses d'une manière que je comprends",
         "id": 1,
         "index": 1,
-        "type": "React"
+        "type": "react",
+        "question": "Mes professeurs expliquent les choses d'une manière que je comprends",
+        "choices": [
+            { "text": "Très insatisfait", "value": 1, "index": 1 },
+            { "text": "Insatisfait", "value": 2, "index": 2 },
+            { "text": "Neutre", "value": 3, "index": 3 },
+            { "text": "Satisfait", "value": 4, "index": 4 },
+            { "text": "Très satisfait", "value": 5, "index": 5 }
+        ],
+        "isCalculated": true,
+        "behavior": "positive"
     },
     {
-        "question": "Est-ce que l'un des éléments suivants vous empêche de faire de votre mieux à l'école ?",
-        "type": "Choose",
         "id": 2,
         "index": 2,
-        "answers": [
-            { "text": "Ma vie à la maison", "value": 1 },
-            { "text": "Responsabilités familiales", "value": 2 },
-            { "text": "Responsabilités parascolaires", "value": 3 },
-            { "text": "Se faire cueillir", "value": 4 }
-        ]
+        "type": "choose",
+        "question": "Est-ce que l'un des éléments suivants vous empêche de faire de votre mieux à l'école ?",
+        "choices": [
+            { "text": "Ma vie à la maison", "value": 1, "index": 1 },
+            { "text": "Responsabilités familiales", "value": 2, "index": 2 },
+            { "text": "Responsabilités parascolaires", "value": 3, "index": 3 },
+            { "text": "Se faire cueillir", "value": 4, "index": 4 },
+            { "text": "Je ne sais pas", "value": 5, "index": 5 }
+        ],
+        "isCalculated": false,
+        "behavior": "positive"
+    },
+    {
+        "id": 3,
+        "index": 3,
+        "type": "choose",
+        "question": "Votre professeur vous traite-t-il avec respect ?",
+        "choices": [
+            { "text": "Oui très souvent", "value": 1, "index": 1 },
+            { "text": "Oui", "value": 2, "index": 2 },
+            { "text": "Non", "value": 3, "index": 3 },
+            { "text": "Non presque jamais", "value": 4, "index": 4 },
+            { "text": "Je ne sais pas", "value": 5, "index": 5 }
+        ],
+        "isCalculated": true,
+        "behavior": "negative"
+    },
+    {
+        "id": 4,
+        "index": 4,
+        "type": "choose",
+        "question": "Qu'est-ce que tu aimes le plus dans ton école ?",
+        "choices": [
+            { "text": "Mon école m'inspire pour être un bon élève", "value": 1, "index": 1 },
+            { "text": "J'ai des professeurs de soutien qui se soucient de moi et m'aident", "value": 2, "index": 2 },
+            { "text": "Les étudiants et le personnel se traitent avec respect et équité", "value": 3, "index": 3 },
+            { "text": "J'apprends des choses importantes et intéressantes dans mes cours", "value": 4, "index": 4 },
+            { "text": "Mon école me prépare pour l'université ou ma carrière", "value": 5, "index": 5 },
+            { "text": "Aucune de ces réponses.", "value": 5, "index": 5 }
+        ],
+        "isCalculated": false,
+        "behavior": "negative"
+    },
+    {
+        "id": 5,
+        "index": 5,
+        "type": "choose",
+        "question": "Qu'est-ce que vous n'aimez pas le plus dans votre école ?",
+        "choices": [
+            { "text": "Mon école n'en fait pas assez pour m'inspirer à être un bon élève", "value": 1, "index": 1 },
+            { "text": "Je n'ai pas assez d'enseignants de soutien qui se soucient de moi et m'aident", "value": 2, "index": 2 },
+            { "text": "Les étudiants et le personnel ne se traitent pas avec suffisamment de respect et d'équité", "value": 3, "index": 3 },
+            { "text": "Je n'apprends pas assez de choses importantes et intéressantes dans mes cours", "value": 4, "index": 4 },
+            { "text": "Mon école ne me prépare pas pour l'université ou ma carrière", "value": 5, "index": 5 },
+            { "text": "Aucune des choses ci-dessus", "value": 5, "index": 5 }
+        ],
+        "isCalculated": false,
+        "behavior": "negative"
+    },
+    {
+        "id": 6,
+        "index": 6,
+        "type": "react",
+        "question": "J'aime venir à l'école la plupart du temps",
+        "choices": [
+            { "text": "Très insatisfait", "value": 1, "index": 1 },
+            { "text": "Insatisfait", "value": 2, "index": 2 },
+            { "text": "Neutre", "value": 3, "index": 3 },
+            { "text": "Satisfait", "value": 4, "index": 4 },
+            { "text": "Très satisfait", "value": 5, "index": 5 }
+        ],
+        "isCalculated": true,
+        "behavior": "positive"
+    },
+    {
+        "id": 7,
+        "index": 7,
+        "type": "react",
+        "question": "Mes professeurs me donnent des devoirs qui m'aident à apprendre",
+        "choices": [
+            { "text": "Très insatisfait", "value": 1, "index": 1 },
+            { "text": "Insatisfait", "value": 2, "index": 2 },
+            { "text": "Neutre", "value": 3, "index": 3 },
+            { "text": "Satisfait", "value": 4, "index": 4 },
+            { "text": "Très satisfait", "value": 5, "index": 5 }
+        ],
+        "isCalculated": true,
+        "behavior": "positive"
+    },
+    {
+        "id": 8,
+        "index": 8,
+        "type": "choose",
+        "question": "Apprends-tu beaucoup dans ta classe ?",
+        "choices": [
+            { "text": "Oui très souvent", "value": 1, "index": 1 },
+            { "text": "Oui", "value": 2, "index": 2 },
+            { "text": "Non, presque jamais", "value": 3, "index": 3 }
+        ],
+        "isCalculated": true,
+        "behavior": "negative"
+    },
+    {
+        "id": 9,
+        "index": 9,
+        "type": "choose",
+        "question": "J'apprends mieux en…",
+        "choices": [
+            { "text": "Lire quelque chose par moi-même", "value": 1, "index": 1 },
+            { "text": "Écouter mon professeur parler", "value": 1, "index": 2 },
+            { "text": "Faire des projets ou des activités pratiques", "value": 1, "index": 3 },
+            { "text": "Travailler avec d'autres étudiants", "value": 1, "index": 4 },
+            { "text": "Réviser les notes que j'ai prises en classe", "value": 1, "index": 5 },
+            { "text": "Suivre les instructions vocales", "value": 1, "index": 6 },
+            { "text": "Réalisation de maquettes ou schémas", "value": 1, "index": 7 },
+            { "text": "Participer aux discussions en classe", "value": 1, "index": 8 }
+        ],
+        "isCalculated": false,
+        "behavior": "negative"
+    },
+    {
+        "id": 10,
+        "index": 10,
+        "type": "react",
+        "question": "La plupart de mes professeurs veulent que nous utilisions nos capacités de réflexion, pas seulement pour mémoriser des choses",
+        "choices": [
+            { "text": "Très insatisfait", "value": 1, "index": 1 },
+            { "text": "Insatisfait", "value": 2, "index": 2 },
+            { "text": "Neutre", "value": 3, "index": 3 },
+            { "text": "Satisfait", "value": 4, "index": 4 },
+            { "text": "Très satisfait", "value": 5, "index": 5 }
+        ],
+        "isCalculated": false,
+        "behavior": "positive"
     }
 ]

@@ -12,6 +12,9 @@ import axios from 'axios';
 import { pushFailure , pushSuccess, pushWarning} from './../../services/alert';
 
 
+
+
+
 class Wrapper extends React.Component {
     constructor(props) {
         super(props);
@@ -35,7 +38,7 @@ class Wrapper extends React.Component {
 
 
         let URL = "https://api.jsonbin.io/v3/b/62c97a915d53821c30966f4a/latest"; // URL of the API used for exprimental purposes
-        URL = "http://localhost/SatisfactionSurvey/server/public/survey/questions"; // Real Server API
+        URL = "http://localhost/Satisfaction-Survey/server/public/survey/questions"; // Real Server API
 
         axios.get(URL)
             .then(response => {
@@ -71,7 +74,7 @@ class Wrapper extends React.Component {
         this.timer = setInterval(() => {
             this.timeSpent++;
         }, 1000);
-
+        
         // If the window is on blur or closed, stop the timer
         window.addEventListener('blur', () => {
             clearInterval(this.timer);
@@ -298,7 +301,7 @@ export default class Sondage extends React.Component {
         console.log(answers);
 
         // API URL
-        let URL = "http://localhost/SatisfactionSurvey/server/public/survey/add"
+        let URL = "http://localhost/Satisfaction-Survey/server/public/survey/add"
         
 
         // axios POST request

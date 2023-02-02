@@ -48,7 +48,7 @@ export const AuthContextProvider = ({ children }) => {
     }, []);
 
     const login = async (credentials) => {
-        const SERVER_URL = "http://localhost/SatisfactionSurvey/server/public/";
+        const SERVER_URL = "http://localhost/Satisfaction-Survey/server/public/";
         // const SERVER_URL = "http://trycod.ntic";
 
         
