@@ -1,34 +1,34 @@
-import { Server } from 'Socket.IO'
+import { Server } from "socket.io";
 
 const SocketHandler = (req, res) => {
-  if (res.socket.server.io) {
-    console.log('Socket is already running')
-  } else {
-    console.log('Socket is initializing')
-    const io = new Server(res.socket.server)
-    res.socket.server.io = io
+    if (res.socket.server.io) {
+        console.log('Socket is already running')
+    } else {
+        console.log('Socket is initializing')
+        const io = new Server(res.socket.server)
+        res.socket.server.io = io
 
-    let Online = 0;
+        let Online = 0;
 
-    io.on('connection', socket => {
-        Online++;
+        io.on('connection', socket => {
+            Online++;
 
-        socket.emit('online', Online);
+            socket.emit('online', Online);
 
-        socket.on('change-count', count => {
-            socket.emit('update-count', count)
-            console.log('updating count: ', count)
+            socket.on('change-count', count => {
+                socket.emit('update-count', count)
+                console.log('updating count: ', count)
+            })
+
+            socket.on('disconnect', function () {
+                socket.emit('disconnected');
+                Online = Online - 1;
+
+            });
         })
 
-        socket.on('disconnect', function () {
-            socket.emit('disconnected');
-            Online = Online - 1;
-      
-        });
-    })
-
-  }
-  res.end()
+    }
+    res.end()
 }
 
 export default SocketHandler

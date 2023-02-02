@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
-import io from 'Socket.IO-client'
+import { io } from "socket.io-client";
 let socket;
 
 
@@ -25,7 +25,7 @@ export default function OnlineUsers() {
                 setOnlineCount(onlineUsers)
             })
 
-            socket.on('disconnected', function() {
+            socket.on('disconnected', function () {
                 setOnlineCount(online - 1);
             })
         })

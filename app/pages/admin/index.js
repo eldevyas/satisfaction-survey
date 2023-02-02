@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Navigate,useLocation} from "react-router-dom"
+import { Navigate, useLocation } from "react-router-dom"
 import Image from 'next/image';
 import Head from 'next/head';
 import Header from '../../components/header/header';
@@ -7,28 +7,28 @@ import { useRouter } from 'next/router';
 import Admin from '../../components/admin/admin';
 import Button from '@mui/material/Button';
 import { push } from '/services/alert'
- 
+
 import AuthContext from '../../contexts/authContext';
 
 export default function AdminPage() {
     const Context = useContext(AuthContext);
     const router = useRouter();
 
-    const [ fullName, setFullName ] = useState('');
-    const [ firstName, setFirstName ] = useState('');
+    const [fullName, setFullName] = useState('');
+    const [firstName, setFirstName] = useState('');
 
     // console.log(Context.user.full_name);
 
     useEffect(() => {
         if (Context.user === null) {
             router.push('/admin/login');
-        } else{
+        } else {
             setFullName(Context.user.full_name);
             setFirstName(Context.user.first_name);
         }
-    }, []);
+    }, [Context.user, router]);
 
-    const Disconnect =  () => {
+    const Disconnect = () => {
         Context.logout();
     }
 
@@ -43,7 +43,7 @@ export default function AdminPage() {
                 <Head>
                     <title>NTIC Rabat - Espace Administration</title>
                 </Head>
-    
+
                 <div className="Background">
                     <div className="BackgroundImage">
                         <Image
@@ -71,7 +71,7 @@ export default function AdminPage() {
                         <div className="row">
                             <Button
                                 variant="primary"
-                                className= "btnSecondary"
+                                className="btnSecondary"
                                 onClick={Disconnect}
                             >
                                 Se déconnecter
@@ -79,7 +79,7 @@ export default function AdminPage() {
 
                             <Button
                                 variant="primary"
-                                className= "btnPrimary"
+                                className="btnPrimary"
                                 onClick={Dashboard}
                             >
                                 Tableau de bord
@@ -87,10 +87,6 @@ export default function AdminPage() {
                         </div>
                     </div>
                 </div>
-
-                <Header type='login'/>
-
-
 
             </div>
         </>

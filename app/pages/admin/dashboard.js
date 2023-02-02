@@ -31,7 +31,7 @@ export default function AdminPage() {
             setFullName(Context.user.full_name);
             setFirstName(Context.user.first_name);
         }
-    }, []);
+    }, [Context.user, router]);
 
     const Disconnect =  () => {
         Context.logout();
