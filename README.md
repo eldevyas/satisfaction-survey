@@ -1,5 +1,6 @@
 # 💻Application web: Enquête de satisfaction pour l'Institut NTIC Rabat
-### 💻Développeurs: Yassine Chettouch et Aasssim El Kihel###
+### 💻Développeurs: 
+Yassine Chettouch et Aasssim El Kihel
 ## 🎯Objectif:
 L'enquête de satisfaction vise à améliorer l'expérience éducative pour les étudiants de l'Institut NTIC Rabat. Les résultats de l'enquête sont utilisés par l'administration pour prendre des décisions informées et améliorer la qualité de l'enseignement.
 
