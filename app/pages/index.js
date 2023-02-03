@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Content from './../components/home/home';
-import OnlineUsers from "/components/home/online";
+// import OnlineUsers from "/components/home/online";
 
 
 
@@ -20,7 +20,7 @@ export default function Home() {
             
             <Content />
 
-            <OnlineUsers/>
+            {/* <OnlineUsers/> */}
         </div>
     )
 }
